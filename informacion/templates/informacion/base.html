@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -6,88 +5,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Composta Verde | Proyecto PAEC{% endblock %}</title>
 
-    <title>
-        {% block titulo %}Composta Verde | Proyecto PAEC{% endblock %}
-    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="{% static 'informacion/css/estilos.css' %}">
+    <!-- CORREGIDO A estilo.css (SIN S) -->
+    <link rel="stylesheet" href="{% static 'informacion/css/estilo.css' %}">
+    
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
+        <div class="contenedor-header">
+            
+            <a href="{% url 'inicio' %}" class="contenedor-logo">
+                <span class="logo-icono">🌱</span>
+                <div class="logo-texto">
+                    <h1>COMPOSTA VERDE</h1>
+                    <p>Proyecto PAEC | Cuidemos nuestro planeta</p>
+                </div>
+            </a>
 
-        <div class="contenedor-logo">
-            <h1>🌱 COMPOSTA VERDE</h1>
-            <p>Proyecto PAEC | Cuidemos nuestro planeta</p>
+            <button class="btn-menu-movil" id="btnMenu" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            {% with url_actual=request.resolver_match.url_name %}
+            <nav class="menu" id="menuPrincipal">
+                <a href="{% url 'inicio' %}" class="{% if url_actual == 'inicio' %}activo{% endif %}">Inicio</a>
+                <a href="{% url 'que_es' %}" class="{% if url_actual == 'que_es' %}activo{% endif %}">¿Qué es?</a>
+                <a href="{% url 'tipos' %}" class="{% if url_actual == 'tipos' %}activo{% endif %}">Tipos</a>
+                <a href="{% url 'materiales' %}" class="{% if url_actual == 'materiales' %}activo{% endif %}">Materiales</a>
+                <a href="{% url 'elaboracion' %}" class="{% if url_actual == 'elaboracion' %}activo{% endif %}">Elaboración</a>
+                <a href="{% url 'beneficios' %}" class="{% if url_actual == 'beneficios' %}activo{% endif %}">Beneficios</a>
+                <a href="{% url 'cuidados' %}" class="{% if url_actual == 'cuidados' %}activo{% endif %}">Cuidados</a>
+                <a href="{% url 'usos' %}" class="{% if url_actual == 'usos' %}activo{% endif %}">Usos</a>
+                <a href="{% url 'preguntas' %}" class="{% if url_actual == 'preguntas' %}activo{% endif %}">Preguntas</a>
+                <a href="{% url 'cuestionario' %}" class="btn-destacado {% if url_actual == 'cuestionario' %}activo{% endif %}">Cuestionario</a>
+                <a href="{% url 'contacto' %}" class="{% if url_actual == 'contacto' %}activo{% endif %}">PAEC</a>
+            </nav>
+            {% endwith %}
+
         </div>
-
-        <!-- MENÚ DE NAVEGACIÓN -->
-        <nav class="menu">
-
-            <a href="{% url 'inicio' %}">Inicio</a>
-
-            <a href="{% url 'que_es' %}">¿Qué es?</a>
-
-            <a href="{% url 'tipos' %}">Tipos</a>
-
-            <a href="{% url 'materiales' %}">Materiales</a>
-
-            <a href="{% url 'elaboracion' %}">Elaboración</a>
-
-            <a href="{% url 'beneficios' %}">Beneficios</a>
-
-            <a href="{% url 'cuidados' %}">Cuidados</a>
-
-            <a href="{% url 'usos' %}">Usos</a>
-
-            <a href="{% url 'preguntas' %}">Preguntas</a>
-
-            <a href="{% url 'cuestionario' %}">Cuestionario</a>
-
-            <a href="{% url 'contacto' %}">PAEC</a>
-
-        </nav>
-
     </header>
 
-
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenido">
-
-        {% block contenido %}
-
-        {% endblock %}
-
+        <div class="contenedor-principal">
+            {% block contenido %}
+            {% endblock %}
+        </div>
     </main>
 
-
-    <!-- PIE DE PÁGINA -->
     <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            
+            <div class="footer-col">
+                <h2>🌎 COMPOSTA VERDE</h2>
+                <p>
+                    Iniciativa educativa enfocada en el aprovechamiento de residuos orgánicos
+                    para fomentar una cultura sustentable.
+                </p>
+            </div>
 
-        <h2>🌎 COMPOSTA VERDE</h2>
+            <div class="footer-col">
+                <h3>Explora</h3>
+                <ul>
+                    <li><a href="{% url 'que_es' %}">¿Qué es la composta?</a></li>
+                    <li><a href="{% url 'elaboracion' %}">Cómo elaborarla</a></li>
+                    <li><a href="{% url 'beneficios' %}">Beneficios ambientales</a></li>
+                </ul>
+            </div>
 
-        <p>
-            Proyecto educativo PAEC
-        </p>
+            <div class="footer-col">
+                <h3>Participa</h3>
+                <ul>
+                    <li><a href="{% url 'cuestionario' %}">Pon a prueba tus conocimientos</a></li>
+                    <li><a href="{% url 'preguntas' %}">Preguntas frecuentes</a></li>
+                    <li><a href="{% url 'contacto' %}">Sobre el Proyecto PAEC</a></li>
+                </ul>
+            </div>
 
-        <p>
-            Aprendiendo a aprovechar los residuos orgánicos
-            y cuidar el medio ambiente.
-        </p>
+        </div>
 
-        <p class="copyright">
-            © 2026 Composta Verde | Proyecto PAEC
-        </p>
-
+        <div class="footer-inferior">
+            <p>© 2026 Composta Verde | Proyecto Educativo PAEC. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-
-    <!-- ARCHIVO JAVASCRIPT -->
+    <script>
+        document.getElementById('btnMenu').addEventListener('click', function() {
+            document.getElementById('menuPrincipal').classList.toggle('abierto');
+        });
+    </script>
     <script src="{% static 'informacion/js/funciones.js' %}"></script>
+    {% block extra_js %}{% endblock %}
 
 </body>
 </html>

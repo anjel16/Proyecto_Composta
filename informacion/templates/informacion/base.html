@@ -1,0 +1,93 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block titulo %}Composta Verde | Proyecto PAEC{% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{% static 'informacion/css/estilos.css' %}">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="contenedor-logo">
+            <h1>🌱 COMPOSTA VERDE</h1>
+            <p>Proyecto PAEC | Cuidemos nuestro planeta</p>
+        </div>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="menu">
+
+            <a href="{% url 'inicio' %}">Inicio</a>
+
+            <a href="{% url 'que_es' %}">¿Qué es?</a>
+
+            <a href="{% url 'tipos' %}">Tipos</a>
+
+            <a href="{% url 'materiales' %}">Materiales</a>
+
+            <a href="{% url 'elaboracion' %}">Elaboración</a>
+
+            <a href="{% url 'beneficios' %}">Beneficios</a>
+
+            <a href="{% url 'cuidados' %}">Cuidados</a>
+
+            <a href="{% url 'usos' %}">Usos</a>
+
+            <a href="{% url 'preguntas' %}">Preguntas</a>
+
+            <a href="{% url 'cuestionario' %}">Cuestionario</a>
+
+            <a href="{% url 'contacto' %}">PAEC</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido">
+
+        {% block contenido %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+
+        <h2>🌎 COMPOSTA VERDE</h2>
+
+        <p>
+            Proyecto educativo PAEC
+        </p>
+
+        <p>
+            Aprendiendo a aprovechar los residuos orgánicos
+            y cuidar el medio ambiente.
+        </p>
+
+        <p class="copyright">
+            © 2026 Composta Verde | Proyecto PAEC
+        </p>
+
+    </footer>
+
+
+    <!-- ARCHIVO JAVASCRIPT -->
+    <script src="{% static 'informacion/js/funciones.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,686 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8ef;
+    color: #263b2b;
+    line-height: 1.6;
+}
+
+
+/* ENCABEZADO */
+
+.encabezado {
+    background-color: #245b38;
+    color: white;
+    padding: 20px;
+}
+
+.contenedor-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor-logo h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.contenedor-logo p {
+    color: #d9ecd9;
+}
+
+
+/* MENÚ */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: #438553;
+}
+
+
+/* CONTENIDO */
+
+.contenido {
+    min-height: 500px;
+    padding: 20px;
+}
+
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    background-color: #183e27;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 40px;
+}
+
+.pie-pagina h2 {
+    margin-bottom: 10px;
+}
+
+.pie-pagina p {
+    margin: 8px 0;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #c5ddc8;
+}
+
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+
+    .contenedor-logo h1 {
+        font-size: 23px;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenido {
+        padding: 10px;
+    }
+
+}
+
+
+/* ==================================
+   PÁGINA DE INICIO
+================================== */
+
+.hero-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 8%;
+    background-color: #dcefd8;
+    border-radius: 15px;
+}
+
+.hero-texto {
+    flex: 1;
+}
+
+.etiqueta {
+    background-color: #245b38;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.hero-texto h1 {
+    font-size: 42px;
+    color: #245b38;
+    margin: 25px 0;
+}
+
+.hero-texto p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.hero-imagen {
+    flex: 1;
+}
+
+.hero-imagen img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: #245b38;
+    color: white;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.boton-principal:hover {
+    background-color: #438553;
+}
+
+
+/* ==================================
+   BIENVENIDA
+================================== */
+
+.bienvenida {
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.bienvenida h2,
+.introduccion h2,
+.importancia h2,
+.resumen-beneficios h2,
+.invitacion h2,
+.mensaje-final h2 {
+    color: #245b38;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* ==================================
+   INTRODUCCIÓN
+================================== */
+
+.introduccion {
+    background-color: white;
+    padding: 45px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 40px auto;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.introduccion-texto p {
+    margin-bottom: 20px;
+}
+
+.boton-secundario {
+    display: inline-block;
+    color: #245b38;
+    border: 2px solid #245b38;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.boton-secundario:hover {
+    background-color: #245b38;
+    color: white;
+}
+
+
+/* ==================================
+   IMPORTANCIA
+================================== */
+
+.importancia {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.importancia > p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.tarjetas-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.tarjeta-inicio {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1 1 250px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-inicio h3 {
+    color: #245b38;
+    margin-bottom: 12px;
+}
+
+
+/* ==================================
+   BENEFICIOS
+================================== */
+
+.resumen-beneficios {
+    background-color: #e1efdc;
+    padding: 45px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.resumen-beneficios ul {
+    padding-left: 25px;
+    margin: 20px 0;
+}
+
+.resumen-beneficios li {
+    margin-bottom: 10px;
+}
+
+
+/* ==================================
+   INVITACIÓN
+================================== */
+
+.invitacion {
+    background-color: #245b38;
+    color: white;
+    text-align: center;
+    padding: 55px 25px;
+    border-radius: 15px;
+    margin: 40px auto;
+}
+
+.invitacion h2 {
+    color: white;
+}
+
+.invitacion p {
+    max-width: 750px;
+    margin: 0 auto 20px;
+}
+
+.invitacion .boton-principal {
+    background-color: white;
+    color: #245b38;
+}
+
+
+/* ==================================
+   MENSAJE FINAL
+================================== */
+
+.mensaje-final {
+    text-align: center;
+    padding: 40px 15px;
+}
+
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 750px) {
+
+    .hero-inicio {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .hero-texto h1 {
+        font-size: 30px;
+    }
+
+    .hero-imagen {
+        width: 100%;
+    }
+
+    .introduccion,
+    .resumen-beneficios {
+        padding: 25px;
+    }
+
+    .bienvenida h2,
+    .introduccion h2,
+    .importancia h2,
+    .resumen-beneficios h2,
+    .invitacion h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================
+   NUEVO DISEÑO PROFESIONAL - COMPOSTA VERDE
+========================================= */
+
+:root {
+    --verde-oscuro: #17452d;
+    --verde: #287548;
+    --verde-claro: #dcebd8;
+    --verde-suave: #edf5e9;
+    --crema: #faf8ef;
+    --blanco: #ffffff;
+    --texto: #34483a;
+    --naranja: #d99a45;
+}
+
+body {
+    background: var(--crema);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: var(--verde-oscuro);
+    padding: 22px 5%;
+    box-shadow: 0 3px 12px #00000020;
+}
+
+.contenedor-logo h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.contenedor-logo p {
+    color: #d5e8d8;
+}
+
+/* NAVEGACIÓN */
+
+.menu {
+    gap: 8px;
+}
+
+.menu a {
+    padding: 9px 13px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #ffffff25;
+    transform: translateY(-2px);
+}
+
+/* CONTENIDO */
+
+.contenido {
+    max-width: 1400px;
+    margin: auto;
+    padding: 35px 5%;
+}
+
+/* PORTADA */
+
+.hero-inicio {
+    background: linear-gradient(120deg, #dcebd8, #f5f2df);
+    border-radius: 22px;
+    padding: 55px;
+    gap: 45px;
+    overflow: hidden;
+}
+
+.hero-texto h1 {
+    color: var(--verde-oscuro);
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+}
+
+.hero-texto p {
+    font-size: 18px;
+    color: #405d47;
+    margin-top: 20px;
+}
+
+.hero-imagen img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px #17452d30;
+}
+
+/* BOTONES */
+
+.boton-principal,
+.boton-secundario {
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.boton-principal {
+    background: var(--verde);
+    border-radius: 30px;
+    padding: 14px 25px;
+}
+
+.boton-principal:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-3px);
+}
+
+.boton-secundario {
+    border-color: var(--verde);
+    border-radius: 30px;
+    padding: 12px 23px;
+}
+
+.boton-secundario:hover {
+    background: var(--verde);
+}
+
+/* SECCIONES */
+
+.bienvenida {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    margin: 45px auto;
+    box-shadow: 0 5px 20px #00000009;
+}
+
+.bienvenida h2,
+.introduccion h2,
+.importancia h2,
+.resumen-beneficios h2 {
+    color: var(--verde-oscuro);
+}
+
+.introduccion {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #0000000c;
+    padding: 45px;
+}
+
+/* TARJETAS */
+
+.tarjetas-inicio {
+    margin-top: 35px;
+}
+
+.tarjeta-inicio {
+    background: white;
+    border-radius: 18px;
+    padding: 32px 25px;
+    border-bottom: 5px solid var(--verde);
+    box-shadow: 0 6px 20px #00000010;
+    transition: 0.3s;
+}
+
+.tarjeta-inicio:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #00000018;
+}
+
+.tarjeta-inicio h3 {
+    color: var(--verde-oscuro);
+}
+
+.icono {
+    background: var(--verde-suave);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+/* BENEFICIOS */
+
+.resumen-beneficios {
+    background: var(--verde-claro);
+    border-radius: 20px;
+    padding: 45px;
+}
+
+.resumen-beneficios li {
+    padding: 5px 0;
+}
+
+/* INVITACIÓN */
+
+.invitacion {
+    background: linear-gradient(120deg, #17452d, #398153);
+    border-radius: 20px;
+    padding: 60px 30px;
+    box-shadow: 0 8px 25px #17452d25;
+}
+
+.invitacion h2 {
+    color: white;
+}
+
+.invitacion p {
+    color: #edf5e9;
+}
+
+.invitacion .boton-principal {
+    background: white;
+    color: var(--verde-oscuro);
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    background: var(--verde-oscuro);
+    padding: 45px 20px;
+    border-top: 5px solid #70a76e;
+}
+
+.pie-pagina h2 {
+    color: white;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 750px) {
+    .hero-inicio {
+        padding: 25px;
+    }
+
+    .hero-imagen img {
+        height: 240px;
+    }
+
+    .bienvenida,
+    .introduccion,
+    .resumen-beneficios {
+        padding: 25px;
+    }
+
+    .menu {
+        gap: 5px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+}
+
+
+/* GALERÍA DE FOTOGRAFÍAS */
+
+.galeria-composta {
+    text-align: center;
+    padding: 45px 10px;
+}
+
+.galeria-composta h2 {
+    color: #17452d;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.galeria-composta > p {
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.galeria-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.galeria-item {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 5px 20px #00000012;
+    transition: 0.3s;
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria-texto {
+    padding: 25px;
+}
+
+.galeria-texto h3 {
+    color: #245b38;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 650px) {
+    .galeria-tarjetas {
+        grid-template-columns: 1fr;
+    }
+}

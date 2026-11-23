@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es la Composta? - Proyecto PAEC</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #2c3e2e; background-color: #f4f7f2; margin: 0; }
+        .contenedor { max-width: 960px; margin: 0 auto; padding: 20px; }
+        header { background-color: #2d5a27; color: white; padding: 30px 20px; text-align: center; }
+        nav a { color: #d4e8d1; margin: 0 12px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #ffffff; text-decoration: underline; }
+        .tarjeta { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+        h2 { color: #2d5a27; border-bottom: 2px solid #e0ebe0; padding-bottom: 8px; }
+        .timeline { border-left: 3px solid #4a8c42; padding-left: 20px; list-style: none; }
+        .timeline li { margin-bottom: 15px; }
+        .fecha { background: #e6f2e5; color: #2d5a27; font-weight: bold; padding: 2px 8px; border-radius: 4px; font-size: 0.9rem; }
+        .grid-ambiental { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .item-ambiental { background: #f8fbf7; border: 1px solid #dce8da; padding: 15px; border-radius: 6px; }
+        .item-ambiental h3 { color: #2d5a27; margin-top: 0; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>La Composta: Conceptos Fundamentales</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="{% url 'que_es' %}">¿Qué es la Composta?</a>
+            <a href="{% url 'tipos' %}">Tipos de Composta</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <!-- 1. Definición -->
+        <section class="tarjeta">
+            <h2>¿Qué es la composta?</h2>
+            <p>La <strong>composta</strong> es un abono orgánico natural que se obtiene a partir de la descomposición controlada de residuos orgánicos —como restos de frutas, verduras, hojas secas y café— mediante la acción de microorganismos (bacterias y hongos), insectos y lombrices.</p>
+            <p>El resultado es un material oscuro, suelto y con olor a tierra húmeda, muy rico en nutrientes, que se utiliza para mejorar la fertilidad y la estructura del suelo en jardines, macetas y cultivos.</p>
+        </section>
+
+        <!-- 2. Historia y Origen -->
+        <section class="tarjeta">
+            <h2>Historia y Origen</h2>
+            <ul class="timeline">
+                <li>
+                    <span class="fecha">2350 a. C.</span>
+                    <strong>Primeros registros escritos en Mesopotamia:</strong> Las tablillas de arcilla del Imperio acadio (reinado de Sargón) contienen las menciones más antiguas sobre el uso de estiércol y materia orgánica descompuesta para fertilizar cultivos.
+                </li>
+                <li>
+                    <span class="fecha">Siglo XX a. C. - Siglo I d. C.</span>
+                    <strong>Técnicas avanzadas en China:</strong> Los agricultores chinos reciclaban residuos orgánicos, lodos de canales y restos vegetales. El texto agrícola <em>Fan Shengzhi shu</em> ya detallaba métodos de abonos fermentados.
+                </li>
+                <li>
+                    <span class="fecha">Siglo VIII a. C. - Siglo I d. C.</span>
+                    <strong>El mundo grecorromano y la Biblia:</strong> Homero menciona el uso de estiércol en <em>La Odisea</em>. Autores romanos como Catón, Plinio el Viejo y Columela describieron fosas para mezclar restos vegetales, cenizas y estiércol animal.
+                </li>
+                <li>
+                    <span class="fecha">Época Prehispánica</span>
+                    <strong>Mesoamérica y pueblos originarios de América:</strong> Los mexicas desarrollaron las <em>chinampas</em> con capas alternas de lodo lacustre y materia orgánica, mientras que en la Amazonia se creó la <em>terra preta</em> (tierra negra) con restos orgánicos y carbón vegetal.
+                </li>
+                <li>
+                    <span class="fecha">Década de 1920</span>
+                    <strong>El compostaje moderno (Método Indore):</strong> El botánico británico Sir Albert Howard sistematizó en la India el apilado en capas de materiales "verdes" y "cafés" controlando aireación y humedad, publicando sus hallazgos en <em>Un testamento agrícola</em> (1940).
+                </li>
+                <li>
+                    <span class="fecha">1940 - Actualidad</span>
+                    <strong>Auge ecológico:</strong> Difundido en América por J.I. Rodale, el compostaje resurgió con fuerza desde los años 70 como una herramienta clave contra el cambio climático y la gestión de residuos urbanos.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 3. Importancia Ambiental -->
+        <section class="tarjeta">
+            <h2>Importancia Ambiental</h2>
+            <p>El compostaje cierra el ciclo natural de la materia orgánica y actúa en cuatro frentes ecológicos críticos:</p>
+            <div class="grid-ambiental">
+                <article class="item-ambiental">
+                    <h3>1. Reducción de gases de efecto invernadero</h3>
+                    <p>Evita que los residuos orgánicos (40%-50% de la basura doméstica) se pudran sin oxígeno en vertederos, frenando la emisión de gas metano (CH<sub>4</sub>), un gas más de 25 veces más potente que el CO<sub>2</sub>.</p>
+                </article>
+                <article class="item-ambiental">
+                    <h3>2. Regeneración y salud del suelo</h3>
+                    <p>Devuelve microorganismos benéficos, combate la erosión al aglutinar las partículas de la tierra y captura carbono funcionando como sumidero natural.</p>
+                </article>
+                <article class="item-ambiental">
+                    <h3>3. Ahorro y protección del agua</h3>
+                    <p>Actúa como una esponja que aumenta la retención de humedad en el suelo y evita los lixiviados tóxicos que contaminan los mantos freáticos.</p>
+                </article>
+                <article class="item-ambiental">
+                    <h3>4. Disminución de agroquímicos</h3>
+                    <p>Aporta nutrientes de liberación lenta que sustituyen fertilizantes sintéticos, evitando la contaminación de ríos y fortaleciendo la resistencia de las plantas.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

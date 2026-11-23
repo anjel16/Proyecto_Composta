@@ -1,6 +1,12 @@
 
 from django.shortcuts import render
 
+def que_es(request):
+    return render(request, 'que_es.html') 
+
+def tipos(request):
+    return render(request, 'tipos.html')
+
 
 # Página principal
 def inicio(request):

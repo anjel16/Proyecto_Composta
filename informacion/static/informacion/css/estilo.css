@@ -622,3 +622,261 @@ h1, h2, h3 {
         height: 250px;
     }
 }
+
+
+/* =========================================
+   ESTILOS DEL INTEGRANTE 4
+   MATERIALES, ELABORACION, BENEFICIOS Y CUIDADOS
+   ========================================= */
+
+/* Encabezado de las páginas */
+
+.seccion-principal {
+    padding: 2rem 0;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 2rem;
+}
+
+.encabezado-seccion h1 {
+    color: var(--verde-oscuro);
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.encabezado-seccion p {
+    color: var(--texto-gris);
+    font-size: 1.05rem;
+}
+
+/* Secciones de información */
+
+.seccion-info {
+    margin: 3rem 0;
+}
+
+.seccion-info h2 {
+    color: var(--verde-oscuro);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.seccion-info > p {
+    color: var(--texto-gris);
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de materiales y beneficios */
+
+.tarjetas-materiales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tarjeta-material {
+    background: #f8f9fa;
+    padding: 1.7rem;
+    border-radius: 14px;
+    border: 1px solid #e9ecef;
+    border-bottom: 4px solid var(--verde-medio);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-material:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+    background: var(--blanco);
+}
+
+.icono-material {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-material h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 0.7rem;
+}
+
+.tarjeta-material p {
+    color: var(--texto-gris);
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-material ul {
+    padding-left: 1.2rem;
+}
+
+.tarjeta-material li {
+    margin-bottom: 0.4rem;
+    color: var(--texto-oscuro);
+}
+
+/* Comparación de materiales */
+
+.comparacion-materiales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.lista-permitidos,
+.lista-prohibidos {
+    padding: 1.7rem;
+    border-radius: 14px;
+    background: #f8f9fa;
+}
+
+.lista-permitidos {
+    border-left: 5px solid #40916c;
+}
+
+.lista-prohibidos {
+    border-left: 5px solid #e76f51;
+}
+
+.lista-permitidos h3 {
+    color: var(--verde-principal);
+    margin-bottom: 1rem;
+}
+
+.lista-prohibidos h3 {
+    color: #c0392b;
+    margin-bottom: 1rem;
+}
+
+.lista-permitidos ul,
+.lista-prohibidos ul {
+    padding-left: 1.3rem;
+}
+
+.lista-permitidos li,
+.lista-prohibidos li {
+    margin-bottom: 0.6rem;
+}
+
+/* Pasos de elaboración */
+
+.pasos-elaboracion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.paso {
+    background: #f1faee;
+    padding: 1.7rem;
+    border-radius: 14px;
+    border: 1px solid #d8f3dc;
+}
+
+.numero-paso {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--verde-principal);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.paso h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 0.7rem;
+}
+
+.paso p {
+    color: var(--texto-gris);
+}
+
+/* Recomendaciones */
+
+.seccion-consejo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    background: var(--verde-claro);
+    border-left: 5px solid var(--verde-principal);
+    padding: 1.7rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+}
+
+.icono-consejo {
+    font-size: 2.5rem;
+}
+
+.seccion-consejo h2 {
+    color: var(--verde-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.seccion-consejo p {
+    color: var(--texto-oscuro);
+}
+
+/* Tabla de problemas y soluciones */
+
+.tabla-problemas {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.tabla-problemas table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background: white;
+}
+
+.tabla-problemas th {
+    background: var(--verde-principal);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.tabla-problemas td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: var(--texto-oscuro);
+}
+
+.tabla-problemas tr:nth-child(even) {
+    background: #f1faee;
+}
+
+.tabla-problemas tr:hover {
+    background: var(--verde-claro);
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 600px) {
+
+    .encabezado-seccion h1 {
+        font-size: 1.8rem;
+    }
+
+    .seccion-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .seccion-consejo {
+        flex-direction: column;
+    }
+
+    .contenedor-principal {
+        padding: 1.2rem;
+    }
+
+}

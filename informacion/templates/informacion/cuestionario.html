@@ -1,0 +1,241 @@
+{% extends 'informacion/base.html' %}
+
+{% block titulo %}Cuestionario sobre la Composta{% endblock %}
+
+{% block contenido %}
+
+<section class="seccion">
+    <h1>Cuestionario sobre la Composta 🌱</h1>
+
+    <p>
+        Contesta las siguientes preguntas para comprobar tus conocimientos
+        sobre la composta.
+    </p>
+
+    <form id="formularioQuiz">
+
+        <div class="pregunta">
+            <h3>1. ¿Qué es la composta?</h3>
+
+            <label>
+                <input type="radio" name="p1" value="a">
+                Un abono natural
+            </label>
+
+            <label>
+                <input type="radio" name="p1" value="b">
+                Un producto de plástico
+            </label>
+
+            <label>
+                <input type="radio" name="p1" value="c">
+                Un tipo de metal
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Cuál de estos materiales sirve para hacer composta?</h3>
+
+            <label>
+                <input type="radio" name="p2" value="a">
+                Plástico
+            </label>
+
+            <label>
+                <input type="radio" name="p2" value="b">
+                Restos de frutas
+            </label>
+
+            <label>
+                <input type="radio" name="p2" value="c">
+                Vidrio
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Cuál es un beneficio de la composta?</h3>
+
+            <label>
+                <input type="radio" name="p3" value="a">
+                Aumenta la basura
+            </label>
+
+            <label>
+                <input type="radio" name="p3" value="b">
+                Contamina el suelo
+            </label>
+
+            <label>
+                <input type="radio" name="p3" value="c">
+                Mejora la calidad del suelo
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>4. ¿Qué material seco se puede agregar?</h3>
+
+            <label>
+                <input type="radio" name="p4" value="a">
+                Hojas secas
+            </label>
+
+            <label>
+                <input type="radio" name="p4" value="b">
+                Botellas de plástico
+            </label>
+
+            <label>
+                <input type="radio" name="p4" value="c">
+                Pilas
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>5. ¿Qué se debe evitar agregar a la composta?</h3>
+
+            <label>
+                <input type="radio" name="p5" value="a">
+                Hojas
+            </label>
+
+            <label>
+                <input type="radio" name="p5" value="b">
+                Restos de verduras
+            </label>
+
+            <label>
+                <input type="radio" name="p5" value="c">
+                Carne y grasas
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>6. ¿Para qué sirve la composta en las plantas?</h3>
+
+            <label>
+                <input type="radio" name="p6" value="a">
+                Para quitarles nutrientes
+            </label>
+
+            <label>
+                <input type="radio" name="p6" value="b">
+                Para aportar nutrientes
+            </label>
+
+            <label>
+                <input type="radio" name="p6" value="c">
+                Para evitar que crezcan
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>7. ¿Qué se debe controlar en la composta?</h3>
+
+            <label>
+                <input type="radio" name="p7" value="a">
+                La humedad
+            </label>
+
+            <label>
+                <input type="radio" name="p7" value="b">
+                El color de las piedras
+            </label>
+
+            <label>
+                <input type="radio" name="p7" value="c">
+                El plástico
+            </label>
+        </div>
+
+        <div class="pregunta">
+            <h3>8. ¿Qué ayuda a reducir la elaboración de composta?</h3>
+
+            <label>
+                <input type="radio" name="p8" value="a">
+                El agua potable
+            </label>
+
+            <label>
+                <input type="radio" name="p8" value="b">
+                Los árboles
+            </label>
+
+            <label>
+                <input type="radio" name="p8" value="c">
+                Los residuos orgánicos
+            </label>
+        </div>
+
+        <button type="button" onclick="calificarQuiz()">
+            Calificar cuestionario
+        </button>
+
+        <button type="reset" onclick="reiniciarQuiz()">
+            Reiniciar
+        </button>
+
+    </form>
+
+    <div id="resultadoQuiz"></div>
+
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+    function calificarQuiz() {
+
+        const respuestasCorrectas = {
+            p1: "a",
+            p2: "b",
+            p3: "c",
+            p4: "a",
+            p5: "c",
+            p6: "b",
+            p7: "a",
+            p8: "c"
+        };
+
+        let puntos = 0;
+        let total = 8;
+
+        for (let pregunta in respuestasCorrectas) {
+
+            let respuesta = document.querySelector(
+                'input[name="' + pregunta + '"]:checked'
+            );
+
+            if (respuesta && respuesta.value === respuestasCorrectas[pregunta]) {
+                puntos++;
+            }
+        }
+
+        let porcentaje = (puntos / total) * 100;
+
+        let mensaje = "";
+
+        if (porcentaje === 100) {
+            mensaje = "¡Excelente! Contestaste todas correctamente.";
+        } else if (porcentaje >= 75) {
+            mensaje = "¡Muy bien! Tienes buenos conocimientos.";
+        } else if (porcentaje >= 50) {
+            mensaje = "Bien, pero puedes seguir aprendiendo.";
+        } else {
+            mensaje = "Te recomendamos revisar nuevamente el tema.";
+        }
+
+        document.getElementById("resultadoQuiz").innerHTML =
+            "<h2>Resultado</h2>" +
+            "<p>Respuestas correctas: " + puntos + " de " + total + "</p>" +
+            "<p>Calificación: " + porcentaje + "%</p>" +
+            "<p>" + mensaje + "</p>";
+    }
+
+    function reiniciarQuiz() {
+        document.getElementById("resultadoQuiz").innerHTML = "";
+    }
+</script>
+
+{% endblock %}

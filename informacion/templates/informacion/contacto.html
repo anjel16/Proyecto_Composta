@@ -1,45 +1,131 @@
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Proyecto PAEC{% endblock %}
+{% block titulo %}PAEC y Comunidad Escolar | Composta Verde{% endblock %}
 
 {% block contenido %}
 
-<section class="seccion">
-    <h1>Proyecto PAEC 🌎</h1>
-
-    <h2>¿Qué es el PAEC?</h2>
-
-    <p>
-        El PAEC es un proyecto educativo que busca promover el cuidado
-        del medio ambiente mediante acciones sustentables y la participación
-        de los estudiantes.
+<!-- Encabezado principal -->
+<div class="text-center mb-5">
+    <span class="etiqueta">PROGRAMA AULA, ESCUELA Y COMUNIDAD 🌎</span>
+    <h1 class="fw-bold text-verde-oscuro">Proyecto PAEC y Comunidad Escolar</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        Transformando el conocimiento del aula en acciones sustentables que mejoran nuestro entorno escolar y fortalecen la conciencia ambiental.
     </p>
+</div>
 
-    <h2>Objetivo del proyecto</h2>
+<!-- 1. ¿Qué es el PAEC y Objetivo del Proyecto? -->
+<section class="row g-4 mb-5">
+    <div class="col-lg-6">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f1faee;">
+            <h2 class="h4 fw-bold text-verde-oscuro mb-3">
+                <i class="bi bi-mortarboard-fill text-success me-2"></i>¿Qué es el PAEC?
+            </h2>
+            <p>
+                El <strong>Programa Aula, Escuela y Comunidad (PAEC)</strong> es una estrategia educativa que conecta lo que aprendemos en clase con la solución de problemas reales de nuestro entorno.
+            </p>
+            <p class="mb-0">
+                A través de este proyecto, abordamos el manejo de los residuos sólidos en nuestro plantel, demostrando que la tecnología y la educación ambiental pueden trabajar juntas por un futuro más limpio.
+            </p>
+        </div>
+    </div>
 
-    <p>
-        Nuestro objetivo es fomentar el aprovechamiento de los residuos
-        orgánicos mediante la elaboración de composta, ayudando a reducir
-        la basura y mejorar el suelo.
-    </p>
-
-    <h2>¿Qué buscamos?</h2>
-
-    <ul>
-        <li>Promover el cuidado del medio ambiente.</li>
-        <li>Reducir los residuos orgánicos.</li>
-        <li>Fomentar el reciclaje y el aprovechamiento de materiales.</li>
-        <li>Crear conciencia sobre la importancia de la sustentabilidad.</li>
-    </ul>
-
-    <h2>Participa</h2>
-
-    <p>
-        Todos podemos contribuir al cuidado del planeta realizando pequeñas
-        acciones, como separar los residuos y aprovechar los restos orgánicos
-        para elaborar composta.
-    </p>
-
+    <div class="col-lg-6">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 border-start border-4 border-success">
+            <h2 class="h4 fw-bold text-verde-oscuro mb-3">
+                <i class="bi bi-bullseye text-success me-2"></i>Objetivo y Metas del Proyecto
+            </h2>
+            <p class="text-muted">
+                Fomentar el aprovechamiento de los residuos orgánicos mediante la elaboración de composta escolar para reducir la basura y mejorar las áreas verdes.
+            </p>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Promover el cuidado activo del medio ambiente.</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Reducir los residuos orgánicos enviados a los basureros.</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Fomentar la separación y aprovechamiento de materiales.</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Crear conciencia sobre la sustentabilidad en todo el plantel.</li>
+            </ul>
+        </div>
+    </div>
 </section>
+
+<!-- 2. Participación de Estudiantes, Docentes y Comunidad (Requisito de la rúbrica) -->
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro text-center mb-4">¿Cómo participamos todos en el plantel?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center tarjeta-eco" style="background-color: #f8fbf7;">
+                <div class="fs-1 mb-2">🎓</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Estudiantes</h3>
+                <p class="small text-muted mb-0">
+                    Difunden la información digital, separan sus residuos del almuerzo en los contenedores adecuados y apoyan en el monitoreo de la composta escolar.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center tarjeta-eco" style="background-color: #f8fbf7;">
+                <div class="fs-1 mb-2">👩‍🏫</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Docentes</h3>
+                <p class="small text-muted mb-0">
+                    Guían el desarrollo técnico y tecnológico del proyecto, vinculando las materias con prácticas ecológicas reales dentro de la escuela.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center tarjeta-eco" style="background-color: #f8fbf7;">
+                <div class="fs-1 mb-2">🏘️</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Familias y Comunidad</h3>
+                <p class="small text-muted mb-0">
+                    Replican la separación de basura orgánica en sus hogares y comparten buenas prácticas ambientales en su colonia.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Propuesta de Acción Concreta en el Plantel (Requisito de la rúbrica) -->
+<section class="card border-0 shadow rounded-4 overflow-hidden mb-4">
+    <div class="card-header text-white p-4" style="background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));">
+        <h2 class="h4 fw-bold mb-1"><i class="bi bi-megaphone-fill text-warning me-2"></i>Propuesta de Acción en Nuestro Plantel: "Estación Verde Escolar"</h2>
+        <p class="small mb-0 opacity-75">Plan práctico en 3 etapas para implementar el compostaje en nuestra escuela.</p>
+    </div>
+    <div class="card-body p-4 bg-white">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-3 rounded-3 h-100" style="background-color: #d8f3dc;">
+                    <span class="badge bg-success mb-2">Etapa 1</span>
+                    <h3 class="h6 fw-bold text-verde-oscuro">Separación en Cafetería y Aulas</h3>
+                    <p class="small text-muted mb-0">
+                        Colocar contenedores identificados (verde para orgánicos y gris para inorgánicos) cerca de la cooperativa escolar para recolectar cáscaras de fruta y restos vegetales del receso.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 rounded-3 h-100" style="background-color: #f4efe6;">
+                    <span class="badge mb-2 text-white" style="background-color: #5c4033;">Etapa 2</span>
+                    <h3 class="h6 fw-bold" style="color: #5c4033;">Módulo de Composta Escolar</h3>
+                    <p class="small text-muted mb-0">
+                        Construir una compostera ventilada con huacales o tarimas recicladas en una zona sombreada del plantel, alternando los restos de cafetería con hojas secas de los árboles de la escuela.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 rounded-3 h-100" style="background-color: #d8f3dc;">
+                    <span class="badge bg-success mb-2">Etapa 3</span>
+                    <h3 class="h6 fw-bold text-verde-oscuro">Abono para Áreas Verdes</h3>
+                    <p class="small text-muted mb-0">
+                        Cosechar la composta madura cada semestre para nutrir los árboles, jardineras y plantas ornamentales de nuestra institución, cerrando el ciclo natural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Llamado a la acción final -->
+<div class="text-center mt-4">
+    <a href="{% url 'cuestionario' %}" class="boton-principal">
+        <i class="bi bi-patch-check-fill me-1"></i> Pon a prueba lo que aprendiste en el Cuestionario →
+    </a>
+</div>
 
 {% endblock %}

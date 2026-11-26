@@ -1,65 +1,114 @@
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Preguntas Frecuentes{% endblock %}
+{% block titulo %}Preguntas Frecuentes | Composta Verde - PAEC{% endblock %}
 
 {% block contenido %}
 
-<section class="seccion">
-    <h1>Preguntas Frecuentes</h1>
+<div class="text-center mb-5">
+    <span class="etiqueta">DUDAS COMUNES ❓</span>
+    <h1 class="fw-bold text-verde-oscuro">Preguntas Frecuentes</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        Conoce las respuestas a las dudas más comunes sobre la elaboración, mantenimiento y uso de la composta.
+    </p>
+</div>
 
-    <p>Conoce las respuestas a las dudas más comunes sobre la composta.</p>
+<div class="col-lg-9 mx-auto">
+    <div class="accordion shadow-sm rounded-4 overflow-hidden" id="acordeonPreguntas">
 
-    <div class="lista-preguntas">
+        <!-- Pregunta 1 -->
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+                <button class="accordion-button fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                    🌱 1. ¿Qué es la composta?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    Es un abono natural rico en nutrientes que se obtiene a partir de la descomposición controlada de residuos orgánicos mediante la acción de microorganismos.
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>¿Qué es la composta?</summary>
-            <p>
-                Es un abono natural que se obtiene de la descomposición
-                de residuos orgánicos.
-            </p>
-        </details>
+        <!-- Pregunta 2 -->
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    🍎 2. ¿Qué materiales se pueden utilizar?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    Se pueden utilizar restos de frutas y verduras, hojas secas, pasto podado, posos de café, bolsas de té naturales, cartón sin tinta y cáscaras de huevo trituradas.
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>¿Qué materiales se pueden utilizar?</summary>
-            <p>
-                Se pueden utilizar restos de frutas, verduras, hojas secas,
-                pasto y cáscaras de huevo.
-            </p>
-        </details>
+        <!-- Pregunta 3 -->
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    ⏳ 3. ¿Cuánto tiempo tarda en hacerse?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    Dependiendo del tamaño de los residuos, el clima y los cuidados (aireación y humedad), suele tardar entre <strong>2 y 4 meses</strong> en estar lista.
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>¿Cuánto tiempo tarda en hacerse?</summary>
-            <p>
-                Dependiendo de los materiales y cuidados, puede tardar
-                varias semanas o algunos meses.
-            </p>
-        </details>
+        <!-- Pregunta 4 -->
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                    👃 4. ¿La composta produce mal olor?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    No. Si se mantiene un buen equilibrio entre materiales secos (cafés) y húmedos (verdes) y se revuelve para que entre oxígeno, huele a tierra húmeda de bosque.
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>¿La composta produce mal olor?</summary>
-            <p>
-                Si se mantiene correctamente, no debería producir malos olores.
-                Es importante controlar la humedad y agregar materiales secos.
-            </p>
-        </details>
+        <!-- Pregunta 5 -->
+        <div class="accordion-item border-0 border-bottom">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                    🚫 5. ¿Qué materiales no se deben agregar?
+                </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    Se debe evitar agregar carne, huesos, pescado, grasas o aceites, productos lácteos, alimentos muy condimentados, heces de mascotas, plásticos, vidrio o metales.
+                </div>
+            </div>
+        </div>
 
-        <details>
-            <summary>¿Qué materiales no se deben agregar?</summary>
-            <p>
-                Se recomienda evitar carne, huesos, grasas, productos lácteos
-                y alimentos procesados.
-            </p>
-        </details>
-
-        <details>
-            <summary>¿Para qué sirve la composta?</summary>
-            <p>
-                Sirve para mejorar el suelo, aportar nutrientes a las plantas
-                y aprovechar los residuos orgánicos.
-            </p>
-        </details>
+        <!-- Pregunta 6 -->
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold text-verde-oscuro" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                    🌳 6. ¿Para qué sirve la composta?
+                </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                <div class="accordion-body text-muted">
+                    Sirve para mejorar la fertilidad y estructura del suelo, conservar la humedad, aportar nutrientes naturales a las plantas y reducir hasta a la mitad la basura enviada a los rellenos sanitarios.
+                </div>
+            </div>
+        </div>
 
     </div>
-</section>
+
+    <!-- Invitación al cuestionario -->
+    <div class="text-center mt-5">
+        <p class="text-muted mb-3">¿Ya resolviste tus dudas? Pon a prueba lo que sabes:</p>
+        <a href="{% url 'cuestionario' %}" class="boton-principal">
+            <i class="bi bi-patch-check-fill me-1"></i> Ir al Cuestionario Interactivo →
+        </a>
+    </div>
+</div>
 
 {% endblock %}

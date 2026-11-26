@@ -1,52 +1,93 @@
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Usos de la Composta{% endblock %}
+{% block titulo %}¿Para qué sirve la Composta? | Composta Verde - PAEC{% endblock %}
 
 {% block contenido %}
 
-<section class="seccion">
-    <h1>Usos de la Composta</h1>
-
-    <p>
-        La composta es un abono natural que ayuda a mejorar la calidad
-        del suelo y favorece el crecimiento de las plantas.
+<!-- Encabezado de sección -->
+<div class="text-center mb-5">
+    <span class="etiqueta">APLICACIONES Y UTILIDAD 🌿</span>
+    <h1 class="fw-bold text-verde-oscuro">¿Para qué sirve la composta?</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        La composta es un abono natural versátil que transforma nuestros desechos cotidianos en salud para el suelo, las plantas y el medio ambiente.
     </p>
+</div>
 
-    <div class="tarjetas">
+<!-- Tarjetas principales (Sección 3 de la rúbrica + tus tarjetas originales) -->
+<section class="row g-4 mb-5">
 
-        <div class="tarjeta">
-            <h2>🌱 Plantas y macetas</h2>
-            <p>
-                Se puede agregar composta a las macetas para aportar
-                nutrientes y ayudar a que las plantas crezcan saludables.
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f1faee;">
+            <div class="fs-1 mb-2">♻️</div>
+            <h2 class="h5 fw-bold text-verde-oscuro">Aprovechar residuos orgánicos</h2>
+            <p class="text-muted mb-0">
+                Permite reutilizar cáscaras de frutas, verduras y restos vegetales de casa o la escuela en lugar de desperdiciarlos.
             </p>
         </div>
-
-        <div class="tarjeta">
-            <h2>🌳 Jardines</h2>
-            <p>
-                Ayuda a mejorar la tierra de los jardines y mantener
-                las plantas en mejores condiciones.
-            </p>
-        </div>
-
-        <div class="tarjeta">
-            <h2>🥕 Huertos</h2>
-            <p>
-                Se utiliza para enriquecer el suelo donde se cultivan
-                verduras, frutas y hortalizas.
-            </p>
-        </div>
-
-        <div class="tarjeta">
-            <h2>🌍 Recuperación del suelo</h2>
-            <p>
-                Ayuda a mejorar la estructura del suelo y su capacidad
-                para conservar la humedad.
-            </p>
-        </div>
-
     </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f1faee;">
+            <div class="fs-1 mb-2">🌍</div>
+            <h2 class="h5 fw-bold text-verde-oscuro">Mejorar y recuperar el suelo</h2>
+            <p class="text-muted mb-0">
+                Enriquece la estructura del suelo, aumenta su aireación, previene la erosión y mejora su capacidad para conservar la humedad.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f1faee;">
+            <div class="fs-1 mb-2">🌱</div>
+            <h2 class="h5 fw-bold text-verde-oscuro">Favorecer el crecimiento de plantas</h2>
+            <p class="text-muted mb-0">
+                Se agrega en macetas y jardineras para liberar nutrientes esenciales de forma natural, ayudando a que las plantas crezcan fuertes y sanas.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f4efe6;">
+            <div class="fs-1 mb-2">🗑️</div>
+            <h2 class="h5 fw-bold" style="color: #5c4033;">Reducir residuos en basureros</h2>
+            <p class="text-muted mb-0">
+                Disminuye hasta en un 50% la cantidad de basura que llega a los rellenos sanitarios, evitando malos olores y contaminación.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f4efe6;">
+            <div class="fs-1 mb-2">🥕</div>
+            <h2 class="h5 fw-bold" style="color: #5c4033;">Nutrir huertos y jardines</h2>
+            <p class="text-muted mb-0">
+                Fertiliza de manera 100% ecológica áreas verdes, árboles y huertos escolares o familiares donde se cultivan verduras y hortalizas.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f4efe6;">
+            <div class="fs-1 mb-2">🤝</div>
+            <h2 class="h5 fw-bold" style="color: #5c4033;">Promover el cuidado ambiental</h2>
+            <p class="text-muted mb-0">
+                Fomenta hábitos sustentables y conciencia ecológica en estudiantes, familias y toda la comunidad escolar.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Banner de navegación al siguiente paso -->
+<section class="p-4 rounded-4 text-white d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 shadow-sm" style="background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));">
+    <div>
+        <h3 class="h5 fw-bold mb-1">¿Listo para producir tu propio abono natural?</h3>
+        <p class="small mb-0 opacity-75">Descubre los materiales necesarios y la guía paso a paso para armar tu composta.</p>
+    </div>
+    <a href="{% url 'elaboracion' %}" class="btn btn-warning fw-bold rounded-pill px-4 text-dark">
+        Ver cómo hacer composta →
+    </a>
 </section>
 
 {% endblock %}

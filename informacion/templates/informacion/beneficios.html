@@ -1,22 +1,81 @@
-
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Beneficios de la composta | Composta Verde{% endblock %}
+{% block titulo %}Beneficios Ambientales | Composta Verde - PAEC{% endblock %}
 
 {% block contenido %}
 
 <section class="seccion-principal">
     <div class="encabezado-seccion">
-        <span class="etiqueta">INTEGRANTE 4</span>
-        <h1>Beneficios de la composta</h1>
+        <span class="etiqueta">IMPACTO POSITIVO EN EL PLANETA 🌎</span>
+        <h1>Beneficios ambientales de la composta</h1>
         <p>
             La composta es una alternativa natural que ayuda a reducir
-            los residuos orgánicos y mejorar las condiciones del suelo,
-            contribuyendo al cuidado del medio ambiente.
+            los residuos orgánicos, disminuir la contaminación y mejorar las condiciones del suelo,
+            contribuyendo directamente al cuidado del medio ambiente.
         </p>
     </div>
 </section>
 
+<!-- 1. DATOS INFORMATIVOS DESTACADOS (Requisito de la rúbrica) -->
+<section class="row g-3 text-center mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-white" style="background-color: var(--verde-oscuro);">
+            <div class="fs-1 mb-2"><i class="bi bi-trash3-fill text-warning"></i></div>
+            <h2 class="display-6 fw-bold mb-1">40% - 50%</h2>
+            <p class="small mb-0 opacity-90">De la basura diaria en hogares y escuelas es orgánica y puede transformarse en composta.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-white" style="background-color: var(--verde-principal);">
+            <div class="fs-1 mb-2"><i class="bi bi-cloud-haze2-fill text-warning"></i></div>
+            <h2 class="display-6 fw-bold mb-1">25x menos</h2>
+            <p class="small mb-0 opacity-90">Impacto climático al evitar que los desechos generen gas metano (CH<sub>4</sub>) en los basureros.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-dark" style="background-color: #d8f3dc;">
+            <div class="fs-1 mb-2"><i class="bi bi-droplet-fill text-primary"></i></div>
+            <h2 class="display-6 fw-bold text-verde-oscuro mb-1">+30% agua</h2>
+            <p class="small mb-0 text-muted">De retención de humedad en suelos abonados con composta, reduciendo el consumo de riego.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 2. COMPARACIÓN VISUAL (Requisito de la rúbrica) -->
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro text-center mb-4">Comparación visual: Basurero vs. Compostaje</h2>
+    <div class="table-responsive rounded-4 shadow-sm">
+        <table class="table table-bordered align-middle text-center mb-0 bg-white">
+            <thead class="text-white" style="background-color: var(--verde-oscuro);">
+                <tr>
+                    <th class="py-3">Aspecto Ambiental</th>
+                    <th class="py-3 bg-danger bg-opacity-75"><i class="bi bi-x-circle me-1"></i>Tirar orgánicos a la basura</th>
+                    <th class="py-3 bg-success"><i class="bi bi-check-circle me-1"></i>Elaborar Composta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold text-start ps-4">Gases contaminantes</td>
+                    <td class="text-danger">Produce gas metano y malos olores al pudrirse sin oxígeno.</td>
+                    <td class="text-success fw-semibold">Descomposición aeróbica limpia que captura carbono.</td>
+                </tr>
+                <tr>
+                    <td class="fw-bold text-start ps-4">Agua y subsuelo</td>
+                    <td class="text-danger">Genera líquidos tóxicos (lixiviados) que contaminan la tierra.</td>
+                    <td class="text-success fw-semibold">Actúa como esponja natural y protege los mantos acuíferos.</td>
+                </tr>
+                <tr>
+                    <td class="fw-bold text-start ps-4">Fertilidad de plantas</td>
+                    <td class="text-danger">Desperdicia nutrientes y obliga a usar fertilizantes químicos.</td>
+                    <td class="text-success fw-semibold">Regenera el suelo y nutre las plantas de forma 100% natural.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 3. TUS BLOQUES ORIGINALES DE BENEFICIOS -->
 <section class="seccion-info">
     <h2>Beneficios ambientales</h2>
 
@@ -124,6 +183,7 @@
     </div>
 </section>
 
+<!-- 4. MENSAJE DE CONCIENTIZACIÓN -->
 <section class="seccion-consejo">
     <div class="icono-consejo">🌎</div>
     <div>

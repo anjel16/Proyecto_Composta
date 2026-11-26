@@ -1,21 +1,24 @@
 {% extends 'informacion/base.html' %}
 {% load static %}
 
-{% block titulo %}Inicio | Composta Verde - PAEC{% endblock %}
+{% block titulo %}Inicio | Compostaje, una alternativa para cuidar nuestro planeta{% endblock %}
 
 {% block contenido %}
 
 <!-- 1. PORTADA PRINCIPAL (HERO) -->
 <section class="hero-inicio">
     <div class="hero-texto">
-        <span class="etiqueta">PROYECTO PAEC 🌎</span>
-        <h1>¡Transforma tus residuos en vida!</h1>
+        <span class="etiqueta">PROYECTO PAEC 🌎 | COMPOSTA VERDE</span>
+        <h1>Compostaje, una alternativa para cuidar nuestro planeta</h1>
+        <p class="fw-bold text-success fs-5 mb-2">
+            “Transforma tus residuos en vida: lo que viene de la tierra, regresa a la tierra.”
+        </p>
         <p>
-            Aprende a elaborar composta, aprovecha los residuos orgánicos 
-            y descubre cómo puedes contribuir al cuidado de nuestro planeta.
+            Aprende a elaborar composta, aprovecha los residuos orgánicos que generamos en la escuela y el hogar, 
+            y descubre cómo puedes contribuir activamente al cuidado del medio ambiente.
         </p>
         <div class="hero-botones">
-            <a href="{% url 'que_es' %}" class="boton-principal">Conoce qué es la composta →</a>
+            <a href="{% url 'que_es' %}" class="boton-principal">Conocer más sobre la composta →</a>
             <a href="{% url 'elaboracion' %}" class="boton-outline">Cómo elaborarla</a>
         </div>
     </div>
@@ -32,9 +35,9 @@
         <span class="sub-etiqueta">Sobre el sitio</span>
         <h2>Bienvenidos a Composta Verde</h2>
         <p>
-            Este sitio web educativo tiene como finalidad informar y concientizar 
-            sobre la importancia de aprovechar los residuos orgánicos mediante la 
-            elaboración de composta.
+            Este sitio web educativo tiene como finalidad informar y concientizar a estudiantes, 
+            docentes y comunidad escolar sobre la importancia de aprovechar los residuos orgánicos 
+            mediante la elaboración de composta.
         </p>
         <p>
             Aquí encontrarás información clara sobre sus características, 
@@ -139,7 +142,7 @@
         <h2>¡Comienza a hacer composta!</h2>
         <p>
             No necesitas ser un experto para empezar. Aprende los pasos necesarios 
-            y descubre cómo puedes aprovechar los residuos orgánicos desde casa.
+            y descubre cómo puedes aprovechar los residuos orgánicos desde casa o la escuela.
         </p>
         <a href="{% url 'elaboracion' %}" class="boton-blanco">Aprende a elaborarla</a>
     </div>

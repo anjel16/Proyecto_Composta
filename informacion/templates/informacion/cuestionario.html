@@ -1,192 +1,127 @@
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Cuestionario sobre la Composta{% endblock %}
+{% block titulo %}Cuestionario Interactivo | Composta Verde - PAEC{% endblock %}
+
+{% block extra_css %}
+<style>
+    .opcion-radio {
+        display: block;
+        padding: 0.65rem 1rem;
+        margin-bottom: 0.5rem;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .opcion-radio:hover {
+        background-color: #f1faee;
+        border-color: var(--verde-medio);
+    }
+    .opcion-radio input[type="radio"] {
+        margin-right: 0.6rem;
+        accent-color: var(--verde-principal);
+    }
+</style>
+{% endblock %}
 
 {% block contenido %}
 
-<section class="seccion">
-    <h1>Cuestionario sobre la Composta 🌱</h1>
-
-    <p>
-        Contesta las siguientes preguntas para comprobar tus conocimientos
-        sobre la composta.
+<div class="text-center mb-5">
+    <span class="etiqueta">EVALUACIÓN INTERACTIVA 🌱</span>
+    <h1 class="fw-bold text-verde-oscuro">Cuestionario sobre la Composta</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        Contesta las siguientes 8 preguntas para comprobar tus conocimientos sobre el compostaje y el cuidado del medio ambiente.
     </p>
+</div>
 
-    <form id="formularioQuiz">
+<form id="formularioQuiz" class="col-lg-9 mx-auto">
 
-        <div class="pregunta">
-            <h3>1. ¿Qué es la composta?</h3>
+    <!-- Pregunta 1 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p1">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">1. ¿Qué es la composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p1" value="a"> Un abono natural</label>
+        <label class="opcion-radio"><input type="radio" name="p1" value="b"> Un producto de plástico</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p1" value="c"> Un tipo de metal</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p1" value="a">
-                Un abono natural
-            </label>
+    <!-- Pregunta 2 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p2">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">2. ¿Cuál de estos materiales sirve para hacer composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p2" value="a"> Plástico</label>
+        <label class="opcion-radio"><input type="radio" name="p2" value="b"> Restos de frutas</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p2" value="c"> Vidrio</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p1" value="b">
-                Un producto de plástico
-            </label>
+    <!-- Pregunta 3 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p3">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">3. ¿Cuál es un beneficio de la composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p3" value="a"> Aumenta la basura</label>
+        <label class="opcion-radio"><input type="radio" name="p3" value="b"> Contamina el suelo</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p3" value="c"> Mejora la calidad del suelo</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p1" value="c">
-                Un tipo de metal
-            </label>
-        </div>
+    <!-- Pregunta 4 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p4">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">4. ¿Qué material seco se puede agregar?</h3>
+        <label class="opcion-radio"><input type="radio" name="p4" value="a"> Hojas secas</label>
+        <label class="opcion-radio"><input type="radio" name="p4" value="b"> Botellas de plástico</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p4" value="c"> Pilas</label>
+    </div>
 
-        <div class="pregunta">
-            <h3>2. ¿Cuál de estos materiales sirve para hacer composta?</h3>
+    <!-- Pregunta 5 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p5">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">5. ¿Qué se debe evitar agregar a la composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p5" value="a"> Hojas</label>
+        <label class="opcion-radio"><input type="radio" name="p5" value="b"> Restos de verduras</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p5" value="c"> Carne y grasas</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p2" value="a">
-                Plástico
-            </label>
+    <!-- Pregunta 6 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p6">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">6. ¿Para qué sirve la composta en las plantas?</h3>
+        <label class="opcion-radio"><input type="radio" name="p6" value="a"> Para quitarles nutrientes</label>
+        <label class="opcion-radio"><input type="radio" name="p6" value="b"> Para aportar nutrientes</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p6" value="c"> Para evitar que crezcan</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p2" value="b">
-                Restos de frutas
-            </label>
+    <!-- Pregunta 7 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p7">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">7. ¿Qué se debe controlar en la composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p7" value="a"> La humedad</label>
+        <label class="opcion-radio"><input type="radio" name="p7" value="b"> El color de las piedras</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p7" value="c"> El plástico</label>
+    </div>
 
-            <label>
-                <input type="radio" name="p2" value="c">
-                Vidrio
-            </label>
-        </div>
+    <!-- Pregunta 8 -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" id="card-p8">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3">8. ¿Qué ayuda a reducir la elaboración de composta?</h3>
+        <label class="opcion-radio"><input type="radio" name="p8" value="a"> El agua potable</label>
+        <label class="opcion-radio"><input type="radio" name="p8" value="b"> Los árboles</label>
+        <label class="opcion-radio mb-0"><input type="radio" name="p8" value="c"> Los residuos orgánicos</label>
+    </div>
 
-        <div class="pregunta">
-            <h3>3. ¿Cuál es un beneficio de la composta?</h3>
-
-            <label>
-                <input type="radio" name="p3" value="a">
-                Aumenta la basura
-            </label>
-
-            <label>
-                <input type="radio" name="p3" value="b">
-                Contamina el suelo
-            </label>
-
-            <label>
-                <input type="radio" name="p3" value="c">
-                Mejora la calidad del suelo
-            </label>
-        </div>
-
-        <div class="pregunta">
-            <h3>4. ¿Qué material seco se puede agregar?</h3>
-
-            <label>
-                <input type="radio" name="p4" value="a">
-                Hojas secas
-            </label>
-
-            <label>
-                <input type="radio" name="p4" value="b">
-                Botellas de plástico
-            </label>
-
-            <label>
-                <input type="radio" name="p4" value="c">
-                Pilas
-            </label>
-        </div>
-
-        <div class="pregunta">
-            <h3>5. ¿Qué se debe evitar agregar a la composta?</h3>
-
-            <label>
-                <input type="radio" name="p5" value="a">
-                Hojas
-            </label>
-
-            <label>
-                <input type="radio" name="p5" value="b">
-                Restos de verduras
-            </label>
-
-            <label>
-                <input type="radio" name="p5" value="c">
-                Carne y grasas
-            </label>
-        </div>
-
-        <div class="pregunta">
-            <h3>6. ¿Para qué sirve la composta en las plantas?</h3>
-
-            <label>
-                <input type="radio" name="p6" value="a">
-                Para quitarles nutrientes
-            </label>
-
-            <label>
-                <input type="radio" name="p6" value="b">
-                Para aportar nutrientes
-            </label>
-
-            <label>
-                <input type="radio" name="p6" value="c">
-                Para evitar que crezcan
-            </label>
-        </div>
-
-        <div class="pregunta">
-            <h3>7. ¿Qué se debe controlar en la composta?</h3>
-
-            <label>
-                <input type="radio" name="p7" value="a">
-                La humedad
-            </label>
-
-            <label>
-                <input type="radio" name="p7" value="b">
-                El color de las piedras
-            </label>
-
-            <label>
-                <input type="radio" name="p7" value="c">
-                El plástico
-            </label>
-        </div>
-
-        <div class="pregunta">
-            <h3>8. ¿Qué ayuda a reducir la elaboración de composta?</h3>
-
-            <label>
-                <input type="radio" name="p8" value="a">
-                El agua potable
-            </label>
-
-            <label>
-                <input type="radio" name="p8" value="b">
-                Los árboles
-            </label>
-
-            <label>
-                <input type="radio" name="p8" value="c">
-                Los residuos orgánicos
-            </label>
-        </div>
-
-        <button type="button" onclick="calificarQuiz()">
-            Calificar cuestionario
+    <!-- Botones de acción -->
+    <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
+        <button type="button" class="boton-principal border-0" onclick="calificarQuiz()">
+            <i class="bi bi-check2-circle me-1"></i> Calificar cuestionario
         </button>
 
-        <button type="reset" onclick="reiniciarQuiz()">
-            Reiniciar
+        <button type="reset" class="boton-outline bg-white" onclick="reiniciarQuiz()">
+            <i class="bi bi-arrow-counterclockwise me-1"></i> Reiniciar
         </button>
+    </div>
 
-    </form>
+</form>
 
-    <div id="resultadoQuiz"></div>
-
-</section>
+<!-- Contenedor de Resultados -->
+<div id="resultadoQuiz" class="col-lg-9 mx-auto mt-4"></div>
 
 {% endblock %}
 
 {% block extra_js %}
-
 <script>
     function calificarQuiz() {
-
         const respuestasCorrectas = {
             p1: "a",
             p2: "b",
@@ -202,40 +137,57 @@
         let total = 8;
 
         for (let pregunta in respuestasCorrectas) {
+            let tarjeta = document.getElementById("card-" + pregunta);
+            tarjeta.classList.remove("border-success", "border-danger", "border-2");
 
-            let respuesta = document.querySelector(
-                'input[name="' + pregunta + '"]:checked'
-            );
+            let respuesta = document.querySelector('input[name="' + pregunta + '"]:checked');
 
             if (respuesta && respuesta.value === respuestasCorrectas[pregunta]) {
                 puntos++;
+                tarjeta.classList.add("border-success", "border-2");
+            } else {
+                tarjeta.classList.add("border-danger", "border-2");
             }
         }
 
-        let porcentaje = (puntos / total) * 100;
-
+        let porcentaje = Math.round((puntos / total) * 100);
         let mensaje = "";
+        let colorBarra = "bg-success";
 
         if (porcentaje === 100) {
-            mensaje = "¡Excelente! Contestaste todas correctamente.";
+            mensaje = "¡Excelente! Contestaste todas correctamente. Eres un experto en composta.";
         } else if (porcentaje >= 75) {
-            mensaje = "¡Muy bien! Tienes buenos conocimientos.";
+            mensaje = "¡Muy bien! Tienes muy buenos conocimientos sobre el compostaje.";
         } else if (porcentaje >= 50) {
-            mensaje = "Bien, pero puedes seguir aprendiendo.";
+            mensaje = "Bien, pero puedes seguir aprendiendo revisando las secciones del sitio.";
+            colorBarra = "bg-warning text-dark";
         } else {
-            mensaje = "Te recomendamos revisar nuevamente el tema.";
+            mensaje = "Te recomendamos revisar nuevamente la información de la página e intentarlo otra vez.";
+            colorBarra = "bg-danger";
         }
 
-        document.getElementById("resultadoQuiz").innerHTML =
-            "<h2>Resultado</h2>" +
-            "<p>Respuestas correctas: " + puntos + " de " + total + "</p>" +
-            "<p>Calificación: " + porcentaje + "%</p>" +
-            "<p>" + mensaje + "</p>";
+        const contenedor = document.getElementById("resultadoQuiz");
+        contenedor.innerHTML = `
+            <div class="card border-0 shadow rounded-4 p-4 text-center" style="background-color: #f1faee;">
+                <h2 class="h4 fw-bold text-verde-oscuro mb-2">📊 Resultado de tu Evaluación</h2>
+                <p class="fs-5 mb-2">Respuestas correctas: <strong>${puntos} de ${total}</strong></p>
+                <div class="progress mx-auto mb-3" style="height: 24px; max-width: 400px;">
+                    <div class="progress-bar ${colorBarra} fw-bold" role="progressbar" style="width: ${porcentaje}%;">
+                        ${porcentaje}%
+                    </div>
+                </div>
+                <p class="fw-semibold text-verde-oscuro mb-0">${mensaje}</p>
+            </div>
+        `;
+        contenedor.scrollIntoView({ behavior: "smooth" });
     }
 
     function reiniciarQuiz() {
         document.getElementById("resultadoQuiz").innerHTML = "";
+        for (let i = 1; i <= 8; i++) {
+            let tarjeta = document.getElementById("card-p" + i);
+            tarjeta.classList.remove("border-success", "border-danger", "border-2");
+        }
     }
 </script>
-
 {% endblock %}

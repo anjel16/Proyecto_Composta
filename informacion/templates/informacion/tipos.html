@@ -1,103 +1,109 @@
+{% extends 'informacion/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de Composta - Proyecto PAEC</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #2c3e2e; background-color: #f4f7f2; margin: 0; }
-        .contenedor { max-width: 960px; margin: 0 auto; padding: 20px; }
-        header { background-color: #2d5a27; color: white; padding: 30px 20px; text-align: center; }
-        nav a { color: #d4e8d1; margin: 0 12px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: #ffffff; text-decoration: underline; }
-        .tarjeta { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-        h2 { color: #2d5a27; border-bottom: 2px solid #e0ebe0; padding-bottom: 8px; }
-        .grid-tipos { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 15px; }
-        .card-tipo { background: #f8fbf7; border: 1px solid #dce8da; padding: 16px; border-radius: 6px; }
-        .card-tipo h3 { color: #2d5a27; margin-top: 0; font-size: 1.1rem; }
-        .lista-diferencias { list-style: none; padding: 0; }
-        .lista-diferencias li { background: #f8fbf7; border-left: 4px solid #4a8c42; padding: 12px 15px; margin-bottom: 10px; border-radius: 4px; }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>Tipos de Composta y sus Diferencias</h1>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="{% url 'que_es' %}">¿Qué es la Composta?</a>
-            <a href="{% url 'tipos' %}">Tipos de Composta</a>
-        </nav>
-    </header>
+{% block titulo %}Tipos de Composta | Composta Verde - PAEC{% endblock %}
 
-    <main class="contenedor">
-        <!-- 1. Tipos de Composta -->
-        <section class="tarjeta">
-            <h2>Tipos de Composta</h2>
-            <ol>
-                <li><strong>Composta aeróbica (en pila o cajón):</strong> Método tradicional que apila capas alternas de materiales "verdes" (nitrógeno) y "cafés" (carbono) con oxígeno y altas temperaturas. Tarda de 2 a 6 meses; ideal para jardines o patios.</li>
-                <li><strong>Lombricomposta (vermicomposta):</strong> Utiliza lombrices rojas californianas (<em>Eisenia fetida</em>) en contenedores ventilados para producir humus sólido y abono líquido (lixiviado). Tarda de 2 a 4 meses; ideal para departamentos.</li>
-                <li><strong>Composta Bokashi:</strong> De origen japonés, realiza una fermentación anaeróbica en un cubo hermético usando salvado con microorganismos eficientes. Toma de 2 a 4 semanas de fermentación más 2 en tierra; ideal para interiores.</li>
-                <li><strong>Composta anaeróbica (en fosa o bolsa):</strong> Descomposición sin oxígeno ni volteo, enterrando o sellando los residuos. Tarda de 6 meses a 1 año; ideal para personas con poco tiempo de mantenimiento.</li>
-                <li><strong>Composta de hojas (Mantillo):</strong> Descomposición lenta realizada principalmente por hongos a partir únicamente de hojarasca seca humedecida. Tarda de 1 a 2 años; excelente acondicionador físico del suelo.</li>
-            </ol>
-        </section>
+{% block contenido %}
 
-        <!-- 2. Características de cada tipo -->
-        <section class="tarjeta">
-            <h2>Características de Cada Tipo</h2>
-            <div class="grid-tipos">
-                <article class="card-tipo">
-                    <h3>1. Composta aeróbica</h3>
-                    <ul>
-                        <li><strong>Altas temperaturas:</strong> Alcanza entre 55 °C y 65 °C, eliminando patógenos y semillas de malezas.</li>
-                        <li><strong>Requiere aireación:</strong> Necesita oxígeno constante mediante volteos semanales.</li>
-                    </ul>
-                </article>
-                <article class="card-tipo">
-                    <h3>2. Lombricomposta</h3>
-                    <ul>
-                        <li><strong>Doble producto:</strong> Genera abono sólido (humus) y fertilizante líquido (lixiviado).</li>
-                        <li><strong>Temperatura templada:</strong> Debe mantenerse entre 15 °C y 25 °C para proteger a las lombrices.</li>
-                    </ul>
-                </article>
-                <article class="card-tipo">
-                    <h3>3. Composta Bokashi</h3>
-                    <ul>
-                        <li><strong>Ambiente hermético:</strong> Fermentación sin oxígeno en cubetas selladas con olor a vinagre.</li>
-                        <li><strong>Amplia dieta:</strong> Procesa carnes, lácteos y comida cocinada sin atraer plagas.</li>
-                    </ul>
-                </article>
-                <article class="card-tipo">
-                    <h3>4. Composta anaeróbica</h3>
-                    <ul>
-                        <li><strong>Mínimo mantenimiento:</strong> No requiere volteos ni vigilancia una vez sellada o enterrada.</li>
-                        <li><strong>Proceso frío:</strong> No se calienta, por lo que es lenta y no destruye semillas de malezas.</li>
-                    </ul>
-                </article>
-                <article class="card-tipo">
-                    <h3>5. Composta de hojas</h3>
-                    <ul>
-                        <li><strong>Dominio fúngico:</strong> Degradación lenta realizada por hongos solo con hojas secas.</li>
-                        <li><strong>Acondicionador físico:</strong> Aporta pocos nutrientes directos, pero retiene mucha humedad.</li>
-                    </ul>
-                </article>
+<!-- Encabezado principal -->
+<div class="text-center mb-5">
+    <span class="etiqueta">MÉTODOS DE COMPOSTAJE 🌱</span>
+    <h1 class="fw-bold text-verde-oscuro">Tipos de Composta y sus Diferencias</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        Existen distintas técnicas para producir abono orgánico según el espacio disponible, el tiempo de mantenimiento y los residuos que generamos.
+    </p>
+</div>
+
+<!-- 1. Clasificación General -->
+<section class="card border-0 shadow-sm rounded-4 p-4 mb-5" style="background-color: #f1faee;">
+    <h2 class="h4 fw-bold text-verde-oscuro mb-3">
+        <i class="bi bi-diagram-3-fill text-success me-2"></i>1. Los 5 Tipos Principales de Composta
+    </h2>
+    <ol class="mb-0 d-flex flex-column gap-2">
+        <li><strong>Composta aeróbica (en pila o cajón):</strong> Método tradicional que apila capas alternas de materiales "verdes" (nitrógeno) y "cafés" (carbono) con oxígeno y altas temperaturas. Tarda de 2 a 6 meses; ideal para jardines o patios.</li>
+        <li><strong>Lombricomposta (vermicomposta):</strong> Utiliza lombrices rojas californianas (<em>Eisenia fetida</em>) en contenedores ventilados para producir humus sólido y abono líquido (lixiviado). Tarda de 2 a 4 meses; ideal para departamentos.</li>
+        <li><strong>Composta Bokashi:</strong> De origen japonés, realiza una fermentación anaeróbica en un cubo hermético usando salvado con microorganismos eficientes. Toma de 2 a 4 semanas de fermentación más 2 en tierra; ideal para interiores.</li>
+        <li><strong>Composta anaeróbica (en fosa o bolsa):</strong> Descomposición sin oxígeno ni volteo, enterrando o sellando los residuos. Tarda de 6 meses a 1 año; ideal para personas con poco tiempo de mantenimiento.</li>
+        <li><strong>Composta de hojas (Mantillo):</strong> Descomposición lenta realizada principalmente por hongos a partir únicamente de hojarasca seca humedecida. Tarda de 1 a 2 años; excelente acondicionador físico del suelo.</li>
+    </ol>
+</section>
+
+<!-- 2. Características de cada tipo (Tarjetas responsivas) -->
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro text-center mb-4">2. Características de Cada Tipo</h2>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f8fbf7;">
+                <h3 class="h5 fw-bold text-verde-oscuro mb-3">1. Composta aeróbica</h3>
+                <ul class="small text-muted mb-0 d-flex flex-column gap-2">
+                    <li><strong>Altas temperaturas:</strong> Alcanza entre 55 °C y 65 °C, eliminando patógenos y semillas de malezas.</li>
+                    <li><strong>Requiere aireación:</strong> Necesita oxígeno constante mediante volteos semanales.</li>
+                </ul>
             </div>
-        </section>
+        </div>
 
-        <!-- 3. Diferencias entre los tipos -->
-        <section class="tarjeta">
-            <h2>Principales Diferencias Entre los Tipos</h2>
-            <ul class="lista-diferencias">
-                <li><strong>1. Presencia de oxígeno y olor:</strong> La aeróbica, lombricomposta y de hojas necesitan aire y huelen a tierra húmeda. La Bokashi y la anaeróbica ocurren sin oxígeno; la Bokashi fermenta con olor a vinagre, mientras que la anaeróbica común entra en putrefacción si se destapa antes de tiempo.</li>
-                <li><strong>2. Temperatura y velocidad:</strong> La aeróbica es la única que se calienta intensamente (hasta 65 °C) y esteriliza malezas. La lombricomposta, anaeróbica y de hojas ocurren en frío. La Bokashi es la más rápida en su fase inicial (2 semanas) porque fermenta en lugar de descomponer.</li>
-                <li><strong>3. Tipo de residuos que aceptan:</strong> Bokashi es el único método doméstico que admite carnes, lácteos, grasas y comida cocinada. La aeróbica y la lombricomposta solo aceptan restos vegetales crudos y materia seca. La composta de hojas funciona exclusivamente con hojarasca.</li>
-                <li><strong>4. Esfuerzo y mantenimiento:</strong> La aeróbica exige trabajo físico constante (voltear con pala). La lombricomposta requiere cuidados suaves pero frecuentes (alimentar en pequeñas dosis). La anaeróbica y la de hojas son de "armar y olvidar".</li>
-                <li><strong>5. Uso y calidad del producto final:</strong> La lombricomposta produce el fertilizante más potente y concentrado en nutrientes y microorganismos. La aeróbica y la anaeróbica dan un abono equilibrado de uso general, mientras que la de hojas actúa principalmente como una esponja para mejorar la textura y retención de agua de la tierra.</li>
-            </ul>
-        </section>
-    </main>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f8fbf7;">
+                <h3 class="h5 fw-bold text-verde-oscuro mb-3">2. Lombricomposta</h3>
+                <ul class="small text-muted mb-0 d-flex flex-column gap-2">
+                    <li><strong>Doble producto:</strong> Genera abono sólido (humus) y fertilizante líquido (lixiviado).</li>
+                    <li><strong>Temperatura templada:</strong> Debe mantenerse entre 15 °C y 25 °C para proteger a las lombrices.</li>
+                </ul>
+            </div>
+        </div>
 
-</body>
-</html>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f8fbf7;">
+                <h3 class="h5 fw-bold text-verde-oscuro mb-3">3. Composta Bokashi</h3>
+                <ul class="small text-muted mb-0 d-flex flex-column gap-2">
+                    <li><strong>Ambiente hermético:</strong> Fermentación sin oxígeno en cubetas selladas con olor a vinagre.</li>
+                    <li><strong>Amplia dieta:</strong> Procesa carnes, lácteos y comida cocinada sin atraer plagas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f4efe6;">
+                <h3 class="h5 fw-bold mb-3" style="color: #5c4033;">4. Composta anaeróbica</h3>
+                <ul class="small text-muted mb-0 d-flex flex-column gap-2">
+                    <li><strong>Mínimo mantenimiento:</strong> No requiere volteos ni vigilancia una vez sellada o enterrada.</li>
+                    <li><strong>Proceso frío:</strong> No se calienta, por lo que es lenta y no destruye semillas de malezas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 tarjeta-eco" style="background-color: #f4efe6;">
+                <h3 class="h5 fw-bold mb-3" style="color: #5c4033;">5. Composta de hojas</h3>
+                <ul class="small text-muted mb-0 d-flex flex-column gap-2">
+                    <li><strong>Dominio fúngico:</strong> Degradación lenta realizada por hongos solo con hojas secas.</li>
+                    <li><strong>Acondicionador físico:</strong> Aporta pocos nutrientes directos, pero retiene mucha humedad.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Principales Diferencias -->
+<section class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+    <h2 class="h3 fw-bold text-verde-oscuro mb-4"><i class="bi bi-arrows-angle-expand text-success me-2"></i>3. Principales Diferencias Entre los Tipos</h2>
+    <div class="d-flex flex-column gap-3">
+        <div class="p-3 rounded-3 border-start border-4 border-success" style="background-color: #f8fbf7;">
+            <strong>1. Presencia de oxígeno y olor:</strong> La aeróbica, lombricomposta y de hojas necesitan aire y huelen a tierra húmeda. La Bokashi y la anaeróbica ocurren sin oxígeno; la Bokashi fermenta con olor a vinagre, mientras que la anaeróbica común entra en putrefacción si se destapa antes de tiempo.
+        </div>
+        <div class="p-3 rounded-3 border-start border-4 border-success" style="background-color: #f8fbf7;">
+            <strong>2. Temperatura y velocidad:</strong> La aeróbica es la única que se calienta intensamente (hasta 65 °C) y esteriliza malezas. La lombricomposta, anaeróbica y de hojas ocurren en frío. La Bokashi es la más rápida en su fase inicial (2 semanas) porque fermenta en lugar de descomponer.
+        </div>
+        <div class="p-3 rounded-3 border-start border-4 border-success" style="background-color: #f8fbf7;">
+            <strong>3. Tipo de residuos que aceptan:</strong> Bokashi es el único método doméstico que admite carnes, lácteos, grasas y comida cocinada. La aeróbica y la lombricomposta solo aceptan restos vegetales crudos y materia seca. La composta de hojas funciona exclusivamente con hojarasca.
+        </div>
+        <div class="p-3 rounded-3 border-start border-4 border-success" style="background-color: #f8fbf7;">
+            <strong>4. Esfuerzo y mantenimiento:</strong> La aeróbica exige trabajo físico constante (voltear con pala). La lombricomposta requiere cuidados suaves pero frecuentes (alimentar en pequeñas dosis). La anaeróbica y la de hojas son de "armar y olvidar".
+        </div>
+        <div class="p-3 rounded-3 border-start border-4 border-success" style="background-color: #f8fbf7;">
+            <strong>5. Uso y calidad del producto final:</strong> La lombricomposta produce el fertilizante más potente y concentrado en nutrientes y microorganismos. La aeróbica y la anaeróbica dan un abono equilibrado de uso general, mientras que la de hojas actúa principalmente como una esponja para mejorar la textura y retención de agua de la tierra.
+        </div>
+    </div>
+</section>
+
+{% endblock %}

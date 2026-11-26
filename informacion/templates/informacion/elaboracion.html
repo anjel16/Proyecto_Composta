@@ -1,24 +1,96 @@
-
 {% extends 'informacion/base.html' %}
+{% load static %}
 
-{% block titulo %}Elaboración de composta | Composta Verde{% endblock %}
+{% block titulo %}¿Cómo hacer una Composta? | Composta Verde - PAEC{% endblock %}
 
 {% block contenido %}
 
 <section class="seccion-principal">
     <div class="encabezado-seccion">
-        <span class="etiqueta">INTEGRANTE 4</span>
-        <h1>¿Cómo elaborar composta?</h1>
+        <span class="etiqueta">GUÍA VISUAL PASO A PASO 🌿</span>
+        <h1>¿Cómo hacer una composta?</h1>
         <p>
             La composta se obtiene mediante la descomposición natural
-            de residuos orgánicos. Con algunos pasos sencillos podemos
-            convertir nuestros desechos en abono natural.
+            de residuos orgánicos. Con materiales sencillos y siguiendo esta guía
+            podemos convertir nuestros desechos en abono fértil en casa o en la escuela.
         </p>
     </div>
 </section>
 
+<!-- 1. MATERIALES NECESARIOS (Requisito de la rúbrica) -->
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro text-center mb-4">1. Materiales necesarios para empezar</h2>
+    <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">📦</div>
+                <h3 class="h6 fw-bold" style="color: #5c4033;">Compostera o huacal</h3>
+                <p class="small text-muted mb-0">Caja de madera, bote perforado o espacio en tierra con buena ventilación y drenaje.</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">🍂</div>
+                <h3 class="h6 fw-bold" style="color: #5c4033;">Material seco (Carbono)</h3>
+                <p class="small text-muted mb-0">Hojas secas, ramas pequeñas, aserrín sin barniz o cartón picado.</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">🥬</div>
+                <h3 class="h6 fw-bold" style="color: #5c4033;">Residuos frescos (Nitrógeno)</h3>
+                <p class="small text-muted mb-0">Cáscaras de frutas, verduras, restos de café y cascarón de huevo triturado.</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">🪣</div>
+                <h3 class="h6 fw-bold" style="color: #5c4033;">Herramientas básicas</h3>
+                <p class="small text-muted mb-0">Pala pequeña o vara para airear, regadera con agua y un poco de tierra negra.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. RESIDUOS PERMITIDOS VS. PROHIBIDOS (Requisito de la rúbrica) -->
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro text-center mb-4">2. ¿Qué residuos usar y cuáles evitar?</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card h-100 border-success border-2 rounded-4 shadow-sm">
+                <div class="card-header bg-verde-principal text-white fw-bold py-3 rounded-top-4">
+                    <i class="bi bi-check-circle-fill me-2"></i>Residuos que SÍ se pueden utilizar
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0 d-flex flex-column gap-2">
+                        <li><strong>Restos vegetales:</strong> Cáscaras de plátano, manzana, papa, zanahoria, lechuga y tallos.</li>
+                        <li><strong>De cocina:</strong> Posos de café, bolsitas de té naturales y cascarón de huevo molido.</li>
+                        <li><strong>De jardín y papel:</strong> Hojas secas, pasto podado, ramas finas, aserrín y cartón sin tinta.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-danger border-2 rounded-4 shadow-sm">
+                <div class="card-header bg-danger text-white fw-bold py-3 rounded-top-4">
+                    <i class="bi bi-x-octagon-fill me-2"></i>Residuos que DEBEN evitarse
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0 d-flex flex-column gap-2">
+                        <li><strong>Origen animal:</strong> Carnes, huesos, pescados, embutidos y lácteos (generan malos olores y atraen plagas).</li>
+                        <li><strong>Grasas y cocinados:</strong> Aceite de cocina, comida frita o muy condimentada.</li>
+                        <li><strong>Contaminantes:</strong> Heces de mascotas (perros/gatos), plásticos, vidrio, metales o madera tratada.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. PROCEDIMIENTO PASO A PASO (Tus 6 pasos originales) -->
 <section class="seccion-info">
-    <h2>Procedimiento paso a paso</h2>
+    <h2>3. Procedimiento paso a paso</h2>
 
     <div class="pasos-elaboracion">
 
@@ -79,10 +151,11 @@
     </div>
 </section>
 
+<!-- 4. CONDICIONES Y MANTENIMIENTO -->
 <section class="seccion-info">
-    <h2>Condiciones necesarias para elaborar composta</h2>
+    <h2>4. Condiciones y recomendaciones de mantenimiento</h2>
 
-    <div class="tarjetas-materiales">
+    <div class="tarjetas-materiales mb-4">
 
         <article class="tarjeta-material">
             <div class="icono-material">💧</div>
@@ -98,7 +171,7 @@
             <h3>Oxígeno</h3>
             <p>
                 Es importante permitir la entrada de aire y revolver
-                los materiales para evitar la falta de oxígeno.
+                los materiales cada semana para evitar malos olores.
             </p>
         </article>
 
@@ -106,8 +179,8 @@
             <div class="icono-material">🌡️</div>
             <h3>Temperatura</h3>
             <p>
-                La temperatura puede aumentar naturalmente durante
-                la descomposición. Se debe vigilar el proceso.
+                La temperatura aumenta naturalmente durante
+                la descomposición, eliminando semillas de maleza.
             </p>
         </article>
 
@@ -115,24 +188,43 @@
             <div class="icono-material">⚖️</div>
             <h3>Equilibrio</h3>
             <p>
-                Se deben combinar materiales ricos en carbono
-                y nitrógeno para mantener un proceso adecuado.
+                Mantener la proporción de 2 partes de material café (seco)
+                por cada 1 parte de material verde (húmedo).
             </p>
         </article>
 
     </div>
+
+    <!-- Guía rápida de mantenimiento -->
+    <div class="card border-warning border-2 rounded-4 p-4 bg-warning bg-opacity-10">
+        <h3 class="h5 fw-bold text-verde-oscuro mb-3"><i class="bi bi-wrench-adjustable-circle-fill text-warning me-2"></i>Recomendaciones rápidas de mantenimiento</h3>
+        <div class="row g-3 small">
+            <div class="col-md-4">
+                <strong>¿Huele mal o está muy mojada?</strong><br>
+                Agrega más hojas secas o cartón picado y mezcla bien para oxigenar.
+            </div>
+            <div class="col-md-4">
+                <strong>¿Está muy seca y no se descompone?</strong><br>
+                Rocía un poco de agua al revolver y cubre la composta con una tapa o tela.
+            </div>
+            <div class="col-md-4">
+                <strong>¿Aparecen mosquitas de fruta?</strong><br>
+                Entierra los restos frescos debajo de una capa gruesa de material seco o tierra.
+            </div>
+        </div>
+    </div>
 </section>
 
+<!-- 5. COSECHA -->
 <section class="seccion-consejo">
     <div class="icono-consejo">🌱</div>
     <div>
         <h2>¿Cuándo está lista la composta?</h2>
         <p>
-            Generalmente está lista cuando tiene un color café oscuro,
-            textura suelta y olor parecido al de la tierra húmeda.
+            Generalmente está lista en <strong>2 a 3 meses</strong>, cuando tiene un color café oscuro,
+            textura suelta y olor parecido al de la tierra húmeda de bosque.
             Los materiales originales ya no deben distinguirse
-            fácilmente. El tiempo depende de las condiciones y
-            del tipo de materiales utilizados.
+            fácilmente y estará lista para nutrir tus plantas.
         </p>
     </div>
 </section>

@@ -984,3 +984,33 @@ h1, h2, h3 {
 #resultadoQuiz h2 {
     color: #2e7d32;
 }
+
+/* INTEGRACIÓN */
+:root {
+    --tierra-cafe: #5c4033;
+    --tierra-crema: #f4efe6;
+}
+
+.bg-verde-oscuro {
+    background-color: var(--verde-oscuro) !important;
+}
+
+.bg-verde-principal {
+    background-color: var(--verde-principal) !important;
+}
+
+.bg-tierra {
+    background-color: var(--tierra-cafe) !important;
+}
+
+.bg-tierra-crema {
+    background-color: var(--tierra-crema) !important;
+}
+
+.text-verde-oscuro {
+    color: var(--verde-oscuro) !important;
+}
+
+.boton-principal, .boton-outline {
+    display: inline-block;
+}

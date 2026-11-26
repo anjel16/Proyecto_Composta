@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %}Composta Verde | Proyecto PAEC{% endblock %}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- CORREGIDO A estilo.css (SIN S) -->
+    <!-- Bootstrap 5.3 CSS + Bootstrap Icons -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link rel="stylesheet" href="https://jsdelivr.net">
+
+    <!-- Tu hoja de estilos personalizada (va después para tener prioridad) -->
     <link rel="stylesheet" href="{% static 'informacion/css/estilo.css' %}">
     
     {% block extra_css %}{% endblock %}
@@ -38,15 +42,15 @@
             <nav class="menu" id="menuPrincipal">
                 <a href="{% url 'inicio' %}" class="{% if url_actual == 'inicio' %}activo{% endif %}">Inicio</a>
                 <a href="{% url 'que_es' %}" class="{% if url_actual == 'que_es' %}activo{% endif %}">¿Qué es?</a>
+                <a href="{% url 'usos' %}" class="{% if url_actual == 'usos' %}activo{% endif %}">¿Para qué sirve?</a>
+                <a href="{% url 'elaboracion' %}" class="{% if url_actual == 'elaboracion' %}activo{% endif %}">¿Cómo hacerla?</a>
+                <a href="{% url 'beneficios' %}" class="{% if url_actual == 'beneficios' %}activo{% endif %}">Beneficios</a>
                 <a href="{% url 'tipos' %}" class="{% if url_actual == 'tipos' %}activo{% endif %}">Tipos</a>
                 <a href="{% url 'materiales' %}" class="{% if url_actual == 'materiales' %}activo{% endif %}">Materiales</a>
-                <a href="{% url 'elaboracion' %}" class="{% if url_actual == 'elaboracion' %}activo{% endif %}">Elaboración</a>
-                <a href="{% url 'beneficios' %}" class="{% if url_actual == 'beneficios' %}activo{% endif %}">Beneficios</a>
                 <a href="{% url 'cuidados' %}" class="{% if url_actual == 'cuidados' %}activo{% endif %}">Cuidados</a>
-                <a href="{% url 'usos' %}" class="{% if url_actual == 'usos' %}activo{% endif %}">Usos</a>
                 <a href="{% url 'preguntas' %}" class="{% if url_actual == 'preguntas' %}activo{% endif %}">Preguntas</a>
-                <a href="{% url 'cuestionario' %}" class="btn-destacado {% if url_actual == 'cuestionario' %}activo{% endif %}">Cuestionario</a>
                 <a href="{% url 'contacto' %}" class="{% if url_actual == 'contacto' %}activo{% endif %}">PAEC</a>
+                <a href="{% url 'cuestionario' %}" class="btn-destacado {% if url_actual == 'cuestionario' %}activo{% endif %}">Cuestionario</a>
             </nav>
             {% endwith %}
 
@@ -67,7 +71,7 @@
                 <h2>🌎 COMPOSTA VERDE</h2>
                 <p>
                     Iniciativa educativa enfocada en el aprovechamiento de residuos orgánicos
-                    para fomentar una cultura sustentable.
+                    para fomentar una cultura sustentable en nuestra comunidad escolar.
                 </p>
             </div>
 
@@ -75,6 +79,7 @@
                 <h3>Explora</h3>
                 <ul>
                     <li><a href="{% url 'que_es' %}">¿Qué es la composta?</a></li>
+                    <li><a href="{% url 'usos' %}">¿Para qué sirve?</a></li>
                     <li><a href="{% url 'elaboracion' %}">Cómo elaborarla</a></li>
                     <li><a href="{% url 'beneficios' %}">Beneficios ambientales</a></li>
                 </ul>
@@ -83,16 +88,16 @@
             <div class="footer-col">
                 <h3>Participa</h3>
                 <ul>
+                    <li><a href="{% url 'contacto' %}">Sobre el Proyecto PAEC</a></li>
                     <li><a href="{% url 'cuestionario' %}">Pon a prueba tus conocimientos</a></li>
                     <li><a href="{% url 'preguntas' %}">Preguntas frecuentes</a></li>
-                    <li><a href="{% url 'contacto' %}">Sobre el Proyecto PAEC</a></li>
                 </ul>
             </div>
 
         </div>
 
         <div class="footer-inferior">
-            <p>© 2026 Composta Verde | Proyecto Educativo PAEC. Todos los derechos reservados.</p>
+            <p class="mb-0">© 2026 Composta Verde | Proyecto Educativo PAEC. Desarrollado con Django 5.2 y Bootstrap 5.3.</p>
         </div>
     </footer>
 
@@ -101,6 +106,8 @@
             document.getElementById('menuPrincipal').classList.toggle('abierto');
         });
     </script>
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://jsdelivr.net"></script>
     <script src="{% static 'informacion/js/funciones.js' %}"></script>
     {% block extra_js %}{% endblock %}
 

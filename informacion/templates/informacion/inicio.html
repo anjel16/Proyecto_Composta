@@ -1,158 +1,176 @@
 {% extends 'informacion/base.html' %}
 {% load static %}
 
-{% block titulo %}Inicio | Compostaje, una alternativa para cuidar nuestro planeta{% endblock %}
+{% block titulo %}Inicio | Composta Verde - Proyecto PAEC{% endblock %}
 
 {% block contenido %}
 
-<!-- 1. PORTADA PRINCIPAL (HERO) -->
-<section class="hero-inicio">
-    <div class="hero-texto">
+<!-- 1. PORTADA PRINCIPAL (HERO DE IMPACTO) -->
+<section class="row align-items-center g-4 mb-5 pb-3 border-bottom">
+    <div class="col-lg-6">
         <span class="etiqueta">PROYECTO PAEC 🌎 | COMPOSTA VERDE</span>
-        <h1>Compostaje, una alternativa para cuidar nuestro planeta</h1>
-        <p class="fw-bold text-success fs-5 mb-2">
+        <h1 class="display-6 fw-bold text-verde-oscuro mb-3">
+            Compostaje, una alternativa para cuidar nuestro planeta
+        </h1>
+        <p class="fw-semibold text-success fs-5 mb-3">
             “Transforma tus residuos en vida: lo que viene de la tierra, regresa a la tierra.”
         </p>
-        <p>
-            Aprende a elaborar composta, aprovecha los residuos orgánicos que generamos en la escuela y el hogar, 
-            y descubre cómo puedes contribuir activamente al cuidado del medio ambiente.
+        <p class="text-muted mb-4">
+            Aprende a elaborar composta, aprovecha los residuos orgánicos que generamos en la escuela y el hogar, y descubre cómo puedes contribuir activamente al cuidado del medio ambiente.
         </p>
-        <div class="hero-botones">
-            <a href="{% url 'que_es' %}" class="boton-principal">Conocer más sobre la composta →</a>
-            <a href="{% url 'elaboracion' %}" class="boton-outline">Cómo elaborarla</a>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="{% url 'que_es' %}" class="btn btn-success btn-lg fw-bold rounded-pill px-4 shadow-sm">
+                Explorar tema →
+            </a>
+            <a href="{% url 'elaboracion' %}" class="btn btn-outline-success btn-lg fw-semibold rounded-pill px-4">
+                Cómo elaborarla
+            </a>
         </div>
     </div>
 
-    <div class="hero-imagen">
-        <img src="{% static 'informacion/img/portada-composta.jpg' %}" 
-             alt="Composta natural y plantas verdes">
-    </div>
-</section>
-
-<!-- 2. BIENVENIDA + ¿QUÉ ES? EN DOS COLUMNAS -->
-<section class="seccion-doble">
-    <div class="caja-info caja-suave">
-        <span class="sub-etiqueta">Sobre el sitio</span>
-        <h2>Bienvenidos a Composta Verde</h2>
-        <p>
-            Este sitio web educativo tiene como finalidad informar y concientizar a estudiantes, 
-            docentes y comunidad escolar sobre la importancia de aprovechar los residuos orgánicos 
-            mediante la elaboración de composta.
-        </p>
-        <p>
-            Aquí encontrarás información clara sobre sus características, 
-            materiales, elaboración, beneficios y cuidados.
-        </p>
-    </div>
-
-    <div class="caja-info caja-borde">
-        <span class="sub-etiqueta">Concepto clave</span>
-        <h2>¿Qué es la composta?</h2>
-        <p>
-            La composta es un abono orgánico obtenido mediante la descomposición 
-            natural de cáscaras de frutas, verduras, hojas secas y restos de plantas.
-        </p>
-        <p>
-            Durante este proceso, microorganismos transforman los residuos en 
-            materia orgánica estable que mejora la calidad del suelo.
-        </p>
-        <a href="{% url 'que_es' %}" class="enlace-flecha">Leer información completa →</a>
-    </div>
-</section>
-
-<!-- 3. GALERÍA: ANTES Y DESPUÉS -->
-<section class="seccion-bloque">
-    <div class="encabezado-seccion">
-        <h2>Conoce el mundo de la composta</h2>
-        <p>Los residuos que normalmente desechamos pueden convertirse en un recurso útil para nuestras plantas.</p>
-    </div>
-
-    <div class="galeria-tarjetas">
-        <article class="galeria-item">
-            <div class="galeria-img-box">
-                <img src="{% static 'informacion/img/residuos-organicos.jpg' %}" 
-                     alt="Residuos orgánicos de frutas y verduras">
-                <span class="badge-paso">1. Materia prima</span>
+    <div class="col-lg-6">
+        <div class="position-relative">
+            <img src="{% static 'informacion/img/portada-composta.jpg' %}" 
+                 alt="Composta natural y plantas verdes"
+                 class="img-fluid rounded-4 shadow w-100"
+                 style="height: 360px; object-fit: cover;">
+            <div class="bg-white shadow-sm rounded-3 px-3 py-2 position-absolute bottom-0 start-0 m-3 d-flex align-items-center gap-2">
+                <span class="fs-4">🌱</span>
+                <div class="lh-1">
+                    <strong class="d-block text-verde-oscuro small">100% Natural y Ecológico</strong>
+                    <small class="text-muted" style="font-size: 0.75rem;">Aprovechamiento escolar y doméstico</small>
+                </div>
             </div>
-            <div class="galeria-texto">
-                <h3>Residuos orgánicos</h3>
-                <p>Aprovecha cáscaras, restos de verduras, hojas secas y otros residuos adecuados.</p>
-            </div>
-        </article>
-
-        <article class="galeria-item">
-            <div class="galeria-img-box">
-                <img src="{% static 'informacion/img/composta-terminada.jpg' %}" 
-                     alt="Composta madura">
-                <span class="badge-paso badge-verde">2. Resultado final</span>
-            </div>
-            <div class="galeria-texto">
-                <h3>Composta terminada</h3>
-                <p>Obtén materia orgánica rica en nutrientes que ayuda a mejorar la calidad del suelo.</p>
-            </div>
-        </article>
+        </div>
     </div>
 </section>
 
-<!-- 4. IMPORTANCIA (3 TARJETAS) -->
-<section class="seccion-bloque">
-    <div class="encabezado-seccion">
-        <h2>¿Por qué es importante hacer composta?</h2>
-        <p>Elaborar composta permite aprovechar los residuos en lugar de desecharlos, promoviendo hábitos responsables.</p>
-    </div>
-
-    <div class="tarjetas-inicio">
-        <article class="tarjeta-inicio">
-            <div class="icono">♻️</div>
-            <h3>Reducir residuos</h3>
-            <p>Aprovechamos los residuos orgánicos que producimos diariamente en casa o en la escuela.</p>
-        </article>
-
-        <article class="tarjeta-inicio">
-            <div class="icono">🌱</div>
-            <h3>Mejorar el suelo</h3>
-            <p>La composta aporta materia orgánica y ayuda a mejorar la estructura y fertilidad del suelo.</p>
-        </article>
-
-        <article class="tarjeta-inicio">
-            <div class="icono">🌎</div>
-            <h3>Cuidar el planeta</h3>
-            <p>Fomentamos prácticas responsables y sustentables para proteger el medio ambiente.</p>
-        </article>
-    </div>
-</section>
-
-<!-- 5. BENEFICIOS + INVITACIÓN (BANNER DIVIDIDO) -->
-<section class="seccion-beneficios-cta">
-    <div class="lista-beneficios-box">
-        <h2>Beneficios de la composta</h2>
-        <p>Ventajas directas para el suelo, las plantas y el ambiente:</p>
-        <ul class="lista-check">
-            <li><span>✔</span> Mejora la estructura y aireación del suelo.</li>
-            <li><span>✔</span> Ayuda a conservar la humedad por más tiempo.</li>
-            <li><span>✔</span> Aporta materia orgánica y nutrientes naturales.</li>
-            <li><span>✔</span> Permite aprovechar residuos orgánicos cotidianos.</li>
-            <li><span>✔</span> Favorece el crecimiento sano de las plantas.</li>
-        </ul>
-        <a href="{% url 'beneficios' %}" class="boton-secundario">Descubrir todos los beneficios</a>
-    </div>
-
-    <div class="cta-box">
-        <span class="icono-cta">🌿</span>
-        <h2>¡Comienza a hacer composta!</h2>
-        <p>
-            No necesitas ser un experto para empezar. Aprende los pasos necesarios 
-            y descubre cómo puedes aprovechar los residuos orgánicos desde casa o la escuela.
-        </p>
-        <a href="{% url 'elaboracion' %}" class="boton-blanco">Aprende a elaborarla</a>
+<!-- 2. LOS 3 PILARES (FRANJA DESTACADA) -->
+<section class="mb-5">
+    <div class="row g-3 text-center">
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 h-100 border border-success-subtle" style="background-color: #f8fbf7;">
+                <span class="fs-1 d-block mb-2">♻️</span>
+                <h2 class="h5 fw-bold text-verde-oscuro">Reducir residuos</h2>
+                <p class="small text-muted mb-0">Aprovechamos los desechos orgánicos que producimos diariamente en casa o en la escuela.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 h-100 border border-success-subtle" style="background-color: #f8fbf7;">
+                <span class="fs-1 d-block mb-2">🌱</span>
+                <h2 class="h5 fw-bold text-verde-oscuro">Mejorar el suelo</h2>
+                <p class="small text-muted mb-0">Aporta materia orgánica rica en nutrientes que mejora la fertilidad y estructura de la tierra.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 h-100 border border-success-subtle" style="background-color: #f8fbf7;">
+                <span class="fs-1 d-block mb-2">🌎</span>
+                <h2 class="h5 fw-bold text-verde-oscuro">Cuidar el planeta</h2>
+                <p class="small text-muted mb-0">Fomentamos hábitos responsables y sustentables para proteger nuestro entorno.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- 6. MENSAJE FINAL -->
-<section class="mensaje-final">
-    <blockquote>
+<!-- 3. BLOQUE CENTRAL: SOBRE EL PROYECTO + TRANSFORMACIÓN VISUAL -->
+<section class="row g-4 align-items-stretch mb-5">
+    <!-- Columna Izquierda: Bienvenida y Concepto -->
+    <div class="col-lg-5 d-flex flex-column gap-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 flex-fill" style="background-color: #f1faee;">
+            <span class="badge bg-success-subtle text-success-emphasis align-self-start mb-2 px-3 py-1 rounded-pill">Sobre el sitio</span>
+            <h2 class="h4 fw-bold text-verde-oscuro mb-2">Bienvenidos a Composta Verde</h2>
+            <p class="small text-muted mb-0">
+                Este espacio educativo busca informar y concientizar a estudiantes, docentes y comunidad escolar sobre la importancia de transformar residuos orgánicos en abono natural mediante el compostaje.
+            </p>
+        </div>
+
+        <div class="card border-success border-2 shadow-sm rounded-4 p-4 bg-white flex-fill">
+            <span class="badge bg-success text-white align-self-start mb-2 px-3 py-1 rounded-pill">Concepto clave</span>
+            <h2 class="h4 fw-bold text-verde-oscuro mb-2">¿Qué es la composta?</h2>
+            <p class="small text-muted mb-3">
+                Es un abono orgánico obtenido por la descomposición natural de cáscaras de frutas, verduras, hojas secas y restos de plantas gracias a microorganismos benéficos.
+            </p>
+            <a href="{% url 'que_es' %}" class="fw-bold text-success text-decoration-none small mt-auto">
+                Leer información completa →
+            </a>
+        </div>
+    </div>
+
+    <!-- Columna Derecha: Antes y Después en tarjetas horizontales -->
+    <div class="col-lg-7">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+            <h2 class="h4 fw-bold text-verde-oscuro mb-1">El ciclo de transformación</h2>
+            <p class="small text-muted mb-4">De residuos cotidianos a un recurso lleno de vida para tus plantas:</p>
+
+            <div class="d-flex flex-column gap-3">
+                <!-- Paso 1 -->
+                <div class="row g-0 border rounded-4 overflow-hidden align-items-center bg-light">
+                    <div class="col-sm-5">
+                        <img src="{% static 'informacion/img/residuos-organicos.jpg' %}" 
+                             alt="Residuos orgánicos"
+                             class="w-100"
+                             style="height: 155px; object-fit: cover;">
+                    </div>
+                    <div class="col-sm-7 p-3 p-md-4">
+                        <span class="badge bg-dark mb-2">1. Materia prima</span>
+                        <h3 class="h6 fw-bold text-verde-oscuro mb-1">Residuos orgánicos</h3>
+                        <p class="small text-muted mb-0">Aprovecha cáscaras, restos de verduras, hojas secas y materiales biodegradables.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="row g-0 border border-success-subtle rounded-4 overflow-hidden align-items-center" style="background-color: #f8fbf7;">
+                    <div class="col-sm-5">
+                        <img src="{% static 'informacion/img/composta-terminada.jpg' %}" 
+                             alt="Composta terminada"
+                             class="w-100"
+                             style="height: 155px; object-fit: cover;">
+                    </div>
+                    <div class="col-sm-7 p-3 p-md-4">
+                        <span class="badge bg-success mb-2">2. Resultado final</span>
+                        <h3 class="h6 fw-bold text-verde-oscuro mb-1">Composta terminada</h3>
+                        <p class="small text-muted mb-0">Obtén tierra fértil rica en nutrientes lista para nutrir jardines, macetas y huertos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. BANNER INTEGRADO: BENEFICIOS + LLAMADO A LA ACCIÓN -->
+<section class="rounded-4 overflow-hidden shadow-sm mb-4" style="background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));">
+    <div class="row g-0 align-items-center text-white">
+        <div class="col-lg-7 p-4 p-md-5">
+            <h2 class="h4 fw-bold mb-3">Beneficios directos de hacer composta</h2>
+            <div class="row g-2 small mb-4">
+                <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Mejora la estructura del suelo</div>
+                <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Conserva la humedad por más tiempo</div>
+                <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Aporta nutrientes naturales</div>
+                <div class="col-sm-6"><i class="bi bi-check-circle-fill text-warning me-2"></i>Reduce la basura orgánica</div>
+            </div>
+            <a href="{% url 'beneficios' %}" class="btn btn-outline-light rounded-pill px-4 btn-sm fw-semibold">
+                Ver todos los beneficios →
+            </a>
+        </div>
+
+        <div class="col-lg-5 p-4 p-md-5 text-center bg-black bg-opacity-25 h-100 d-flex flex-column justify-content-center align-items-center">
+            <span class="fs-1 mb-2">🌿</span>
+            <h3 class="h5 fw-bold mb-2">¡Comienza hoy mismo!</h3>
+            <p class="small opacity-90 mb-3">
+                Sigue nuestra guía paso a paso y crea tu propia composta en casa o en la escuela.
+            </p>
+            <a href="{% url 'elaboracion' %}" class="btn btn-light text-verde-oscuro fw-bold rounded-pill px-4 shadow-sm">
+                Aprende a elaborarla
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 5. FRASE DE CIERRE -->
+<div class="text-center pt-2">
+    <p class="fst-italic text-muted small mb-0">
         “Pequeñas acciones generan grandes cambios. El cuidado del medio ambiente comienza con nuestras decisiones diarias.”
-    </blockquote>
-</section>
+    </p>
+</div>
 
 {% endblock %}

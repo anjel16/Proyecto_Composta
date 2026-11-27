@@ -103,11 +103,11 @@
 
     <!-- Botones de acción -->
     <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
-        <button type="button" class="boton-principal border-0" onclick="calificarQuiz()">
+        <button type="button" class="btn btn-success btn-lg fw-bold rounded-pill px-4 shadow-sm" onclick="calificarQuiz()">
             <i class="bi bi-check2-circle me-1"></i> Calificar cuestionario
         </button>
 
-        <button type="reset" class="boton-outline bg-white" onclick="reiniciarQuiz()">
+        <button type="reset" class="btn btn-outline-secondary btn-lg fw-semibold rounded-pill px-4" onclick="reiniciarQuiz()">
             <i class="bi bi-arrow-counterclockwise me-1"></i> Reiniciar
         </button>
     </div>
@@ -170,9 +170,9 @@
         contenedor.innerHTML = `
             <div class="card border-0 shadow rounded-4 p-4 text-center" style="background-color: #f1faee;">
                 <h2 class="h4 fw-bold text-verde-oscuro mb-2">📊 Resultado de tu Evaluación</h2>
-                <p class="fs-5 mb-2">Respuestas correctas: <strong>${puntos} de ${total}</strong></p>
-                <div class="progress mx-auto mb-3" style="height: 24px; max-width: 400px;">
-                    <div class="progress-bar ${colorBarra} fw-bold" role="progressbar" style="width: ${porcentaje}%;">
+                <p class="fs-5 mb-3">Respuestas correctas: <strong>${puntos} de ${total}</strong></p>
+                <div class="progress w-100 mx-auto mb-3 rounded-pill shadow-sm" style="height: 28px; max-width: 450px;">
+                    <div class="progress-bar ${colorBarra} fw-bold fs-6" role="progressbar" style="width: ${porcentaje}%; min-width: 45px;">
                         ${porcentaje}%
                     </div>
                 </div>

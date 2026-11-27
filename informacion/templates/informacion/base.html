@@ -1,115 +1,170 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %}Composta Verde | Proyecto PAEC{% endblock %}</title>
 
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap 5.3 CSS + Bootstrap Icons -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <link rel="stylesheet" href="https://jsdelivr.net">
-
-    <!-- Tu hoja de estilos personalizada (va después para tener prioridad) -->
-    <link rel="stylesheet" href="{% static 'informacion/css/estilo.css' %}">
+    <!-- Bootstrap 5.3 CSS e Iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
+    <!-- Tu archivo CSS propio -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    <style>
+        :root {
+            --verde-oscuro: #1b4332;
+            --verde-principal: #2d6a4f;
+            --verde-medio: #40916c;
+            --verde-claro: #d8f3dc;
+            --tierra: #6c584c;
+        }
+        body {
+            background-color: #f4f7f5;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar-eco {
+            background-color: var(--verde-oscuro);
+        }
+        .navbar-eco .nav-link {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.45rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .navbar-eco .nav-link:hover,
+        .navbar-eco .nav-link.active {
+            background-color: #ffffff;
+            color: var(--verde-oscuro) !important;
+            font-weight: 700;
+        }
+        .btn-cuestionario {
+            background-color: #52b788;
+            color: #ffffff !important;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+        .btn-cuestionario:hover {
+            background-color: #74c69d;
+        }
+        .text-verde-oscuro { color: var(--verde-oscuro) !important; }
+        .bg-verde-principal { background-color: var(--verde-principal) !important; }
+        .etiqueta {
+            background-color: var(--verde-claro);
+            color: var(--verde-oscuro);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: var(--verde-oscuro);
+            color: rgba(255, 255, 255, 0.85);
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+
     {% block extra_css %}{% endblock %}
 </head>
-
 <body>
 
-    <header class="encabezado">
-        <div class="contenedor-header">
-            
-            <a href="{% url 'inicio' %}" class="contenedor-logo">
-                <span class="logo-icono">🌱</span>
-                <div class="logo-texto">
-                    <h1>COMPOSTA VERDE</h1>
-                    <p>Proyecto PAEC | Cuidemos nuestro planeta</p>
+    <!-- Barra de Navegación sincronizada con tu urls.py -->
+    <nav class="navbar navbar-expand-xl navbar-dark navbar-eco shadow-sm sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'inicio' %}">
+                <span class="fs-3">🌱</span>
+                <div>
+                    <span class="fw-bold d-block lh-1">COMPOSTA VERDE</span>
+                    <small class="text-white-50" style="font-size: 0.72rem;">Proyecto PAEC | Cuidemos nuestro planeta</small>
                 </div>
             </a>
 
-            <button class="btn-menu-movil" id="btnMenu" aria-label="Abrir menú">
-                ☰
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-            {% with url_actual=request.resolver_match.url_name %}
-            <nav class="menu" id="menuPrincipal">
-                <a href="{% url 'inicio' %}" class="{% if url_actual == 'inicio' %}activo{% endif %}">Inicio</a>
-                <a href="{% url 'que_es' %}" class="{% if url_actual == 'que_es' %}activo{% endif %}">¿Qué es?</a>
-                <a href="{% url 'usos' %}" class="{% if url_actual == 'usos' %}activo{% endif %}">¿Para qué sirve?</a>
-                <a href="{% url 'elaboracion' %}" class="{% if url_actual == 'elaboracion' %}activo{% endif %}">¿Cómo hacerla?</a>
-                <a href="{% url 'beneficios' %}" class="{% if url_actual == 'beneficios' %}activo{% endif %}">Beneficios</a>
-                <a href="{% url 'tipos' %}" class="{% if url_actual == 'tipos' %}activo{% endif %}">Tipos</a>
-                <a href="{% url 'materiales' %}" class="{% if url_actual == 'materiales' %}activo{% endif %}">Materiales</a>
-                <a href="{% url 'cuidados' %}" class="{% if url_actual == 'cuidados' %}activo{% endif %}">Cuidados</a>
-                <a href="{% url 'preguntas' %}" class="{% if url_actual == 'preguntas' %}activo{% endif %}">Preguntas</a>
-                <a href="{% url 'contacto' %}" class="{% if url_actual == 'contacto' %}activo{% endif %}">PAEC</a>
-                <a href="{% url 'cuestionario' %}" class="btn-destacado {% if url_actual == 'cuestionario' %}activo{% endif %}">Cuestionario</a>
-            </nav>
-            {% endwith %}
-
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto align-items-xl-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'que_es' %}">¿Qué es?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'usos' %}">¿Para qué sirve?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'elaboracion' %}">¿Cómo hacerla?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'beneficios' %}">Beneficios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'tipos' %}">Tipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'materiales' %}">Materiales</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cuidados' %}">Cuidados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'preguntas' %}">Preguntas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">PAEC</a></li>
+                    <li class="nav-item ms-xl-1">
+                        <a class="nav-link btn-cuestionario px-3" href="{% url 'cuestionario' %}">Cuestionario</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="contenido">
-        <div class="contenedor-principal">
-            {% block contenido %}
-            {% endblock %}
+    <!-- Contenido Principal de cada página -->
+    <main class="container my-5">
+        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+            {% block contenido %}{% endblock %}
         </div>
     </main>
 
-    <footer class="pie-pagina">
-        <div class="contenedor-footer">
-            
-            <div class="footer-col">
-                <h2>🌎 COMPOSTA VERDE</h2>
-                <p>
-                    Iniciativa educativa enfocada en el aprovechamiento de residuos orgánicos
-                    para fomentar una cultura sustentable en nuestra comunidad escolar.
-                </p>
+    <!-- Pie de Página -->
+    <footer class="pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <h5 class="fw-bold text-white mb-3">🌱 COMPOSTA VERDE</h5>
+                    <p class="small text-white-50">
+                        Iniciativa educativa enfocada en el aprovechamiento de residuos orgánicos para fomentar una cultura ambiental sostenible en nuestra comunidad escolar.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold text-white mb-3">Explora</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-1"><a href="{% url 'que_es' %}">¿Qué es la composta?</a></li>
+                        <li class="mb-1"><a href="{% url 'usos' %}">¿Para qué sirve?</a></li>
+                        <li class="mb-1"><a href="{% url 'elaboracion' %}">¿Cómo hacer una composta?</a></li>
+                        <li class="mb-1"><a href="{% url 'beneficios' %}">Beneficios ambientales</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold text-white mb-3">Participa</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-1"><a href="{% url 'contacto' %}">Sobre el Proyecto PAEC</a></li>
+                        <li class="mb-1"><a href="{% url 'cuestionario' %}">Pon a prueba tus conocimientos</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="footer-col">
-                <h3>Explora</h3>
-                <ul>
-                    <li><a href="{% url 'que_es' %}">¿Qué es la composta?</a></li>
-                    <li><a href="{% url 'usos' %}">¿Para qué sirve?</a></li>
-                    <li><a href="{% url 'elaboracion' %}">Cómo elaborarla</a></li>
-                    <li><a href="{% url 'beneficios' %}">Beneficios ambientales</a></li>
-                </ul>
+            <hr class="border-secondary my-4">
+            <div class="text-center small text-white-50">
+                © 2026 Composta Verde - Proyecto Aula, Escuela y Comunidad (PAEC). Todos los derechos reservados.
             </div>
-
-            <div class="footer-col">
-                <h3>Participa</h3>
-                <ul>
-                    <li><a href="{% url 'contacto' %}">Sobre el Proyecto PAEC</a></li>
-                    <li><a href="{% url 'cuestionario' %}">Pon a prueba tus conocimientos</a></li>
-                    <li><a href="{% url 'preguntas' %}">Preguntas frecuentes</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="footer-inferior">
-            <p class="mb-0">© 2026 Composta Verde | Proyecto Educativo PAEC. Desarrollado con Django 5.2 y Bootstrap 5.3.</p>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('btnMenu').addEventListener('click', function() {
-            document.getElementById('menuPrincipal').classList.toggle('abierto');
-        });
-    </script>
     <!-- Bootstrap 5.3 JS -->
-    <script src="https://jsdelivr.net"></script>
-    <script src="{% static 'informacion/js/funciones.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_js %}{% endblock %}
-
 </body>
 </html>

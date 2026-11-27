@@ -1,125 +1,119 @@
 {% extends 'informacion/base.html' %}
+{% load static %}
 
 {% block titulo %}Cuidados de la composta | Composta Verde{% endblock %}
 
 {% block contenido %}
 
-<section class="seccion-principal">
-    <div class="encabezado-seccion">
-        <span class="etiqueta">MANTENIMIENTO Y CONTROL 🌱</span>
-        <h1>Cuidados de la composta</h1>
-        <p>
-            Para obtener una composta de buena calidad es importante
-            revisar constantemente sus condiciones y mantener un
-            equilibrio durante el proceso de descomposición.
-        </p>
+<div class="text-center mb-5">
+    <span class="etiqueta">MANTENIMIENTO Y CONTROL 🌱</span>
+    <h1 class="fw-bold text-verde-oscuro">Cuidados de la composta</h1>
+    <p class="text-muted col-lg-8 mx-auto">
+        Para obtener una composta de buena calidad es importante revisar constantemente sus condiciones y mantener un equilibrio durante el proceso de descomposición.
+    </p>
+</div>
+
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro mb-4">Cuidados necesarios</h2>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f1faee;">
+                <div class="fs-1 mb-2">💧</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Controlar la humedad</h3>
+                <p class="small text-muted mb-0">
+                    Mantener los materiales ligeramente húmedos. Si están demasiado secos, agregar un poco de agua. Si tienen exceso de humedad, incorporar materiales secos.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f1faee;">
+                <div class="fs-1 mb-2">🌬️</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Proporcionar ventilación</h3>
+                <p class="small text-muted mb-0">
+                    Revolver la composta periódicamente para permitir la entrada de oxígeno y favorecer la actividad de los microorganismos.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f1faee;">
+                <div class="fs-1 mb-2">🍂</div>
+                <h3 class="h5 fw-bold text-verde-oscuro">Equilibrar los materiales</h3>
+                <p class="small text-muted mb-0">
+                    Combinar residuos húmedos, como frutas y verduras, con materiales secos, como hojas y cartón.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">☀️</div>
+                <h3 class="h5 fw-bold" style="color: #5c4033;">Elegir una buena ubicación</h3>
+                <p class="small text-muted mb-0">
+                    Colocar la compostera en un lugar con sombra parcial, protegido de lluvias excesivas y con buena ventilación.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">🔍</div>
+                <h3 class="h5 fw-bold" style="color: #5c4033;">Revisar constantemente</h3>
+                <p class="small text-muted mb-0">
+                    Observar el olor, la humedad y la apariencia de los materiales para identificar cualquier problema.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background-color: #f4efe6;">
+                <div class="fs-1 mb-2">🧹</div>
+                <h3 class="h5 fw-bold" style="color: #5c4033;">Mantener limpio el espacio</h3>
+                <p class="small text-muted mb-0">
+                    Evitar acumulaciones de residuos fuera de la compostera y mantener el área organizada para prevenir plagas.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="seccion-info">
-    <h2>Cuidados necesarios</h2>
+<section class="mb-5">
+    <h2 class="h3 fw-bold text-verde-oscuro mb-4">Problemas frecuentes y sus soluciones</h2>
 
-    <div class="tarjetas-materiales">
-
-        <article class="tarjeta-material">
-            <div class="icono-material">💧</div>
-            <h3>Controlar la humedad</h3>
-            <p>
-                Mantener los materiales ligeramente húmedos.
-                Si están demasiado secos, agregar un poco de agua.
-                Si tienen exceso de humedad, incorporar materiales secos.
-            </p>
-        </article>
-
-        <article class="tarjeta-material">
-            <div class="icono-material">🌬️</div>
-            <h3>Proporcionar ventilación</h3>
-            <p>
-                Revolver la composta periódicamente para permitir
-                la entrada de oxígeno y favorecer la actividad
-                de los microorganismos.
-            </p>
-        </article>
-
-        <article class="tarjeta-material">
-            <div class="icono-material">🍂</div>
-            <h3>Equilibrar los materiales</h3>
-            <p>
-                Combinar residuos húmedos, como frutas y verduras,
-                con materiales secos, como hojas y cartón.
-            </p>
-        </article>
-
-        <article class="tarjeta-material">
-            <div class="icono-material">☀️</div>
-            <h3>Elegir una buena ubicación</h3>
-            <p>
-                Colocar la compostera en un lugar con sombra parcial,
-                protegido de lluvias excesivas y con buena ventilación.
-            </p>
-        </article>
-
-        <article class="tarjeta-material">
-            <div class="icono-material">🔍</div>
-            <h3>Revisar constantemente</h3>
-            <p>
-                Observar el olor, la humedad y la apariencia
-                de los materiales para identificar cualquier problema.
-            </p>
-        </article>
-
-        <article class="tarjeta-material">
-            <div class="icono-material">🧹</div>
-            <h3>Mantener limpio el espacio</h3>
-            <p>
-                Evitar acumulaciones de residuos fuera de la compostera
-                y mantener el área organizada para prevenir plagas.
-            </p>
-        </article>
-
-    </div>
-</section>
-
-<section class="seccion-info">
-    <h2>Problemas frecuentes y sus soluciones</h2>
-
-    <div class="tabla-problemas">
-        <table>
-            <thead>
+    <div class="table-responsive rounded-4 shadow-sm">
+        <table class="table table-bordered table-hover align-middle mb-0 bg-white">
+            <thead class="text-white" style="background-color: var(--verde-oscuro);">
                 <tr>
-                    <th>Problema</th>
-                    <th>Posible causa</th>
-                    <th>Solución</th>
+                    <th class="py-3 ps-4">Problema</th>
+                    <th class="py-3">Posible causa</th>
+                    <th class="py-3">Solución</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr>
-                    <td>Malos olores</td>
+                    <td class="fw-bold ps-4 text-verde-oscuro">Malos olores</td>
                     <td>Exceso de humedad o falta de oxígeno.</td>
                     <td>Revolver y agregar hojas secas o cartón.</td>
                 </tr>
-
                 <tr>
-                    <td>Composta demasiado seca</td>
+                    <td class="fw-bold ps-4 text-verde-oscuro">Composta demasiado seca</td>
                     <td>Falta de agua y humedad.</td>
                     <td>Agregar agua poco a poco y mezclar.</td>
                 </tr>
-
                 <tr>
-                    <td>Presencia de insectos</td>
+                    <td class="fw-bold ps-4 text-verde-oscuro">Presencia de insectos</td>
                     <td>Residuos expuestos o materiales inadecuados.</td>
                     <td>Cubrir los residuos húmedos con materiales secos.</td>
                 </tr>
-
                 <tr>
-                    <td>Descomposición lenta</td>
+                    <td class="fw-bold ps-4 text-verde-oscuro">Descomposición lenta</td>
                     <td>Materiales demasiado grandes o poca humedad.</td>
                     <td>Reducir el tamaño de los residuos y revisar la humedad.</td>
                 </tr>
-
                 <tr>
-                    <td>Exceso de humedad</td>
+                    <td class="fw-bold ps-4 text-verde-oscuro">Exceso de humedad</td>
                     <td>Demasiada agua o lluvia.</td>
                     <td>Agregar materiales secos y mejorar el drenaje.</td>
                 </tr>
@@ -128,15 +122,12 @@
     </div>
 </section>
 
-<section class="seccion-consejo">
-    <div class="icono-consejo">🌱</div>
+<section class="p-4 rounded-4 text-white d-flex flex-column flex-md-row align-items-center gap-4 shadow-sm" style="background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));">
+    <div class="display-4">🌱</div>
     <div>
-        <h2>Recuerda</h2>
-        <p>
-            La composta necesita tiempo y atención. Revisarla
-            periódicamente permite solucionar los problemas a tiempo
-            y conseguir un abono natural que pueda aprovecharse
-            en jardines, huertos y plantas.
+        <h2 class="h4 fw-bold mb-2">Recuerda</h2>
+        <p class="mb-0 opacity-90">
+            La composta necesita tiempo y atención. Revisarla periódicamente permite solucionar los problemas a tiempo y conseguir un abono natural que pueda aprovecharse en jardines, huertos y plantas.
         </p>
     </div>
 </section>
